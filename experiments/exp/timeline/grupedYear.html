@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Friends Timeline</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>
+      <b>Friends</b>Timeline
+    </a>
+  </h1>
+  <h2>Just another experiment.</h2>
+</header>
+
+<h3>In one year:</h3>
+<div class="chart-container">
+  <div id="timeline"></div>
+</div>
+<p>View the <a href="http://www.ialonso.es/projects/timeline/index.html">real timeline</a>.</p>
+
+<footer>
+  Created by <b>nachoad</b> / <a href="https://twitter.com/nachoad">@nachoad</a>
+  <br>
+  Show more <a href="http://ialonso.es/experiments">experiments</a>.
+  <br>
+</footer>
+
+<script type="text/javascript" src="js/labella.js"></script>
+<script type="text/javascript" src="js/d3.js"></script>
+
+<script type="text/javascript">
+
+// ---------------------------------------------------
+// Create dummy data
+// ---------------------------------------------------
+
+var data = [
+  {date: new Date(2016,04,03), name: 'Josema'},
+  {date: new Date(2016,04,08), name: 'Alberto'},
+  {date: new Date(2016,07,19), name: 'Nacho'},
+  {date: new Date(2016,07,29), name: 'Natalia'},
+  {date: new Date(2016,11,29), name: 'Guille'},
+  {date: new Date(2016,11,29), name: 'Jose A.'},
+  {date: new Date(2016,11,25), name: 'Maria'},
+  {date: new Date(2016,02,18), name: 'Esther'},
+  {date: new Date(2016,08,12), name: 'Carlos'},
+  {date: new Date(2016,05,30), name: 'Isra'},
+  {date: new Date(2016,06,04), name: 'Lola'},
+  {date: new Date(2016,11,12), name: 'Beni'},
+  {date: new Date(2016,05,12), name: 'Fabio'},
+  {date: new Date(2016,03,11), name: 'Hector'},
+  {date: new Date(2016,00,26), name: 'Marilena'}
+];
+
+var formatDate = d3.time.format('%b %e');
+
+var options =   {
+  margin: {left: 20, right: 20, top: 20, bottom: 20},
+  initialWidth: 1000,
+  initialHeight: 280
+};
+
+var innerWidth =  options.initialWidth - options.margin.left - options.margin.right;
+var innerHeight = options.initialHeight - options.margin.top - options.margin.bottom;
+var colorScale = d3.scale.category10();
+
+var vis = d3.select('#timeline')
+  .append('svg')
+    .attr('width',  options.initialWidth)
+    .attr('height', options.initialHeight)
+  .append('g')
+    .attr('transform', 'translate('+(options.margin.left)+','+(options.margin.top)+')');
+
+function labelText(d){
+  return formatDate(d.date) + ' - ' + d.name;
+}
+
+// compute labels dimension
+var dummyText = vis.append('text');
+
+var timeScale = d3.time.scale()
+  .domain(d3.extent(data, function(d){return d.date;}))
+  .range([0, innerWidth])
+  .nice();
+
+var nodes = data.map(function(movie){
+  var bbox = dummyText.text(labelText(movie))[0][0].getBBox();
+  movie.h = bbox.height;
+  movie.w = bbox.width;
+  return new labella.Node(timeScale(movie.date), movie.w + 15, movie);
+});
+
+dummyText.remove();
+
+// ---------------------------------------------------
+// Draw dots on the timeline
+// ---------------------------------------------------
+
+vis.append('line')
+  .classed('timeline', true)
+  .attr('x2', innerWidth);
+
+var linkLayer = vis.append('g');
+var labelLayer = vis.append('g');
+var dotLayer = vis.append('g');
+
+dotLayer.selectAll('circle.dot')
+  .data(nodes)
+.enter().append('circle')
+  .classed('dot', true)
+  .attr('r', 3)
+  .attr('cx', function(d){return d.getRoot().idealPos;});
+
+function color(d,i){
+  return colorScale(i);
+}
+
+//---------------------------------------------------
+// Labella has utility to help rendering
+//---------------------------------------------------
+
+var renderer = new labella.Renderer({
+  layerGap: 60,
+  nodeHeight: nodes[0].data.h,
+  direction: 'bottom'
+});
+
+function draw(nodes){
+  // Add x,y,dx,dy to node
+  renderer.layout(nodes);
+
+  // Draw label rectangles
+  var sEnter = labelLayer.selectAll('rect.flag')
+    .data(nodes)
+  .enter().append('g')
+    .attr('transform', function(d){return 'translate('+(d.x-d.width/2)+','+(d.y)+')';});
+
+  sEnter
+    .append('rect')
+    .classed('flag', true)
+    .attr('width', function(d){ return d.data.w + 9; })
+    .attr('height', function(d){ return d.data.h + 4; })
+    .attr('rx', 2)
+    .attr('ry', 2)
+    .style('fill', color);
+
+  sEnter.append('text')
+    .attr('x', 7)
+    .attr('y', 16)
+    .style('fill', '#fff')
+    .text(function(d){return labelText(d.data);});
+
+  // Draw path from point on the timeline to the label rectangle
+  linkLayer.selectAll('path.link')
+    .data(nodes)
+  .enter().append('path')
+    .classed('link', true)
+    .attr('d', function(d){return renderer.generatePath(d);})
+    .style('stroke', color)
+    .style('stroke-width',2)
+    .style('opacity', 0.6)
+    .style('fill', 'none');
+}
+
+//---------------------------------------------------
+// Use labella.Force to place the labels
+//---------------------------------------------------
+
+var force = new labella.Force({
+  minPos: -10,
+  maxPos: innerWidth
+})
+  .nodes(nodes)
+  .compute();
+
+draw(force.nodes());
+
+
+
+////////////////////////////////////////////////////
+// SECOND VISUALIZATION
+////////////////////////////////////////////////////
+
+
+
+
+</script>
+
+</body>
+
+</html>

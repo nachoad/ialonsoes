@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Connected</title>
+
+	<link rel="stylesheet" href="../../css/bootstrap.css">
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+	<!--[if lte IE 8]>
+			<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+		<![endif]-->
+
+	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+</head>
+
+
+<body>
+	<div class="container" style="padding-top:75px;">
+
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+			<a class="navbar-brand" href="https://ialonso.es">Go home!</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="https://ialonso.es/bio">Bio</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="https://ialonso.es/experiments">Experiments <span
+								class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://medium.com/@nachoad">Notes</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://twitter.com/nachoad">Twitter</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://linkedin.com/in/ignacioalonsodelgado/">LinkedIn</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+
+
+		<h2>Be connected</H2>
+		<H4 class="text-right">Last update: 10 Feb 2018</H4>
+		<p class="lead">Este es un primer boceto del proyecto. Quiero sacar más tiempo para terminar de describir bien
+			todos los pasos que seguí.</p>
+		<p class="lead">Bajo el grafo más información.</p>
+
+
+
+
+		<p><img src="img/connected_750x750.png" class="img-fluid"></p>
+
+
+
+		<p class="lead">La idea principal era comprobar si se podían obtener grupos claros en mi red de Twitter.</p>
+		<p class="lead">Para ello hice un script capaz de obtener los seguidores que tengo. A partir de ahí, busqué los
+			seguidores de ellos. Es decir un segundo grado.</p>
+		<p class="lead">Al hacer las búsquedas vía API de Twitter, tenía la limitación de 15 llamadas por cada 15
+			minutos. La descarga de los datos la programé en Python. El programa se ejecutó en una Raspberry PI durante
+			un par de días, aprovechando esas ventanad debug 15 min.</p>
+		<p class="lead">Una vez tenía los datos usé algunos algoritmos para poder separar mejor los nodos y comprender
+			los grupos que se formaban porque eran seguidores entre ellos.</p>
+		<p class="lead">En <b>azul</b> se ve claramente a todo el grupo con relación a IBM. En <b>morado</b> toda la
+			gente que he seguido desde que tenía el blog (ya no es mío) de Soygik.com (blog con más de 10k visitas
+			diarias) y que he conocido por Twitter o en congresos/eventos. En <b>verde</b> una cuenta que sigue a un
+			montón de personas. Y entre medias, en <b>gris</b> periódicos online, o cuentas relacionadas con tecnología
+			(como Mashable, NASA, GitHub, Tim Cook...).</p>
+		<br />
+	</div> <!-- Container-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
