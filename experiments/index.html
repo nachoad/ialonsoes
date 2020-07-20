@@ -1,40 +1,55 @@
 <!doctype html>
 <html lang="en">
   <head>
-    
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169295052-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
+
       gtag('config', 'UA-169295052-1');
     </script>
-      
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Experimentos - Nacho Alonso Delgado">
-    <meta name="author" content="Ignacio Alonso Delgado">
-    <!--<link rel="icon" href="../../../../favicon.ico">-->
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal website of Ignacio Alonso Delgado. Projects, social, work, etc.">
+    <meta name="author" content="Ignacio Alonso Delgado">
+
+    <!-- meta property for social -->
+    <meta property="og:site_name" content="Ignacio Alonso Delgado" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ignacio Alonso Delgado" />
+    <meta property="og:description" content="Ignacio Alonso Delgado personal website." />
+    <meta property="og:url" content="https://ialonso.es" />
+    <meta property="og:image" content="https://ialonso.es/img/og-ialonso.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ignacio Alonso Delgado" />
+    <meta name="twitter:description" content="Ignacio Alonso Delgado personal website." />
+    <meta name="twitter:url" content="https://ialonso.es" />
+    <meta name="twitter:image" content="https://ialonso.es/img/og-ialonso.png" />
+    <meta name="twitter:site" content="@nachoad" />
 
     <!-- Color for the bars on the smartphones-->
-    <meta name="theme-color" content="#27963c">
-    <meta name="msapplication-navbutton-color" content="#27963c">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#27963c">
+    <meta name="theme-color" content="#96483e">
+    <meta name="msapplication-navbutton-color" content="#96483e">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#96483e">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap-new.css" rel="stylesheet">
+    <link href="../css/customcss.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Source+Sans+Pro:wght@300;700&display=swap" rel="stylesheet">
 
     <title>Ignacio Alonso Delgado · Experiments</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/customcss.css" rel="stylesheet">
   </head>
 
-  
-  <body class="bg-light">
+
+  <body class="bg-light" class="py-4" style="padding-top:4.5rem">
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
       <a class="navbar-brand" href="https://ialonso.es">Go home!</a>
@@ -68,50 +83,43 @@
         <p>Welcome! I usually post my (public) <b>experiments</b> on this page. Feel free to investigate them. If you have any questions, <a href="https://twitter.com/nachoad">Twitter</a> is the best way to contact with me.</p>
       </div>
 
-      <div class="my-3 p-3 rounded box-shadow d-none d-md-block" id="div-1">
-        <h1 class="h1-white">My Map</h1>
-        <!--<div class="text-right"><a class="btn btn-light" href="exp/mymap/index.html" role="button">View &raquo;</a></div>-->
-        <a class="btn btn-light" href="exp/mymap/index.html" role="button">View &raquo;</a>
-      </div>
-      <div class="my-3 p-3 rounded box-shadow d-none d-md-block" id="div-2">
-        <h1 class="h1-white">Connected</h1>
-        <a class="btn btn-light text-right" href="exp/connected/index.html" role="button">View &raquo;</a>
-      </div>
-      <div class="my-3 p-3 rounded box-shadow d-none d-md-block" id="div-3">
-        <h1 class="h1-white">Friends timeline</h1>
-        <a class="btn btn-primary" href="exp/timeline/index.html" role="button">View &raquo;</a>
-      </div>
-      <div class="my-3 p-3 rounded box-shadow d-none d-md-block" id="div-4">
-        <h1 class="h1-white">iAlonso Printer</h1>
-        <a class="btn btn-light" href="exp/printer/index.html" role="button">View &raquo;</a>
-      </div>
-      <div class="my-3 p-3 rounded box-shadow d-none d-md-block" id="div-5">
-        <h1>Writing articles on Sundays</h1>
-        <a class="btn btn-primary" href="https://medium.com/@nachoad/" role="button">View &raquo;</a>
-      </div>
+      <a style="display:block" class="text-white text-decoration-none" href="exp/mymap/index.html">
+        <div class="my-3 p-3 rounded box-shadow d-none d-block" id="div-1">
+          <h1>My Map</h1><br>
+        </div>
+      </a>
 
-      <!-- Small devices -->
-      <div class="my-3 p-3 rounded box-shadow d-md-none" id="div-1-min">
-        <h1 class="h1-white">My Map</h1>
-        <!--<div class="text-right"><a class="btn btn-light" href="exp/mymap/index.html" role="button">View &raquo;</a></div>-->
-        <a class="btn btn-light" href="exp/mymap/index.html" role="button">View &raquo;</a>
-      </div>
-      <div class="my-3 p-3 rounded box-shadow d-md-none" id="div-2-min">
-        <h1 class="h1-white">Connected</h1>
-        <a class="btn btn-light text-right" href="exp/connected/index.html" role="button">View &raquo;</a>
-      </div>
-      <div class="my-3 p-3 rounded box-shadow d-md-none" id="div-3-min">
-        <h1 class="h1-white">Friends timeline</h1>
-        <a class="btn btn-primary" href="exp/timeline/index.html" role="button">View &raquo;</a>
-      </div>
-      <div class="my-3 p-3 rounded box-shadow d-md-none" id="div-4-min">
-        <h1 class="h1-white">iAlonso Printer</h1>
-        <a class="btn btn-light" href="exp/printer/index.html" role="button">View &raquo;</a>
-      </div>
-      <div class="my-3 p-3 rounded box-shadow d-md-none" id="div-5-min">
-        <h1>Writing articles on Sundays</h1>
-        <a class="btn btn-primary" href="https://medium.com/@nachoad/" role="button">View &raquo;</a>
-      </div>
+      <a style="display:block" class="text-white text-decoration-none" href="exp/connected/index.html">
+        <div class="my-3 p-3 rounded box-shadow d-none d-block" id="div-2">
+          <h1>Connected</h1><br>
+        </div>
+      </a>
+
+      <a style="display:block" class="text-white text-decoration-none" href="exp/timeline/index.html">
+        <div class="my-3 p-3 rounded box-shadow d-none d-block" id="div-3">
+          <h1>Friends timeline</h1><br>
+          <br>
+        </div>
+      </a>
+
+      <a style="display:block" class="text-white text-decoration-none" href="exp/printer/index.html">
+        <div class="my-3 p-3 rounded box-shadow d-none d-block" id="div-4">
+          <h1>iAlonso Printer</h1><br>
+        </div>
+      </a>
+
+      <a style="display:block" class="text-white text-decoration-none" href="https://www.youtube.com/channel/UC59Y86nFk7eg-5Ql4Xi3peQ">
+        <div class="my-3 p-3 rounded box-shadow d-none d-block" id="div-5">
+          <h1>Digital Productivity YouTube channel</h1><br>
+        </div>
+      </a>
+
+      <a style="display:block" class="text-white text-decoration-none" href="https://medium.com/@nachoad/">
+        <div class="my-3 p-3 rounded box-shadow d-none d-block" id="div-6">
+          <h1>Writing articles on Sundays</h1><br>
+        </div>
+      </a>
+
 
       </br>
       <div class="alert alert-warning" role="alert">
@@ -126,6 +134,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>

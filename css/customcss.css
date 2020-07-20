@@ -1,0 +1,11 @@
+
+
+.h1-white { color: white; }
+.box-shadow { box-shadow: 0 .35rem .75rem rgba(0, 0, 0, .30); }
+
+#div-1 {background-image: url('../img/exp/1.jpg'); background-size: 100%; text-shadow: 1px 1px 12px black;}
+#div-2 {background-image: url('../img/exp/2.jpg'); background-size: 100%; text-shadow: 1px 1px 12px black;}
+#div-3 {background-image: url('../img/exp/3.jpg'); background-size: 100%; text-shadow: 1px 1px 12px black;}
+#div-4 {background-image: url('../img/exp/4.jpg'); background-size: 100%; text-shadow: 1px 1px 12px black;}
+#div-5 {background-image: url('../img/exp/5.jpg'); background-size: 100%; text-shadow: 1px 1px 12px black;}
+#div-6 {background-image: url('../img/exp/6.jpg'); background-size: 100%; text-shadow: 1px 1px 12px black;}
