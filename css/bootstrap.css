@@ -10281,17 +10281,18 @@ a.text-dark:hover, a.text-dark:focus {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+
 /***
 /***
 /*** Custom ialonso.es **/
 h1{
-  font-family: 'Karla', sans-serif;
+  font-family: verdana, sans-serif;
 }
 
 h2, h3, h4, h5, p{
-  font-family: 'Karla', sans-serif;
+  font-family: verdana, sans-serif;
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
