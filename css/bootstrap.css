@@ -10291,8 +10291,10 @@ h1{
 
 h2, h3, h4, h5, p{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
