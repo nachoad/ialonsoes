@@ -10298,3 +10298,13 @@ h2, h3, h4, h5, p{
 p {
   font-size: 1.1rem;
 }
+
+.y {
+  background: #fdfaa8;
+  color: #3a3928;
+}
+
+.under {
+  border-radius: 3px;
+  padding: 2px 5px;
+}
