@@ -10296,7 +10296,8 @@ h2, h3, h4, h5, p{
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .y {
