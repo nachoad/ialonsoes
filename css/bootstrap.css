@@ -10309,3 +10309,7 @@ p {
   border-radius: 3px;
   padding: 2px 5px;
 }
+
+li {
+  font-size: 1.2rem;
+}
