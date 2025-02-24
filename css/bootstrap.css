@@ -10288,7 +10288,7 @@ a.text-dark:hover, a.text-dark:focus {
 /*** Custom ialonso.es **/
 h1{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h2, h3, h4, h5, p{
@@ -10298,8 +10298,8 @@ h2, h3, h4, h5, p{
 }
 
 p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-size: 1.1rem;
+  margin-bottom: 28px;
 }
 
 .y {
@@ -10314,5 +10314,5 @@ p {
 
 li {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
