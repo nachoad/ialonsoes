@@ -10307,7 +10307,7 @@ p {
 
 .y {
   background: #ffffe2;
-  color: #575314;
+  #color: #575314;
 }
 
 .kyn {
@@ -10315,7 +10315,7 @@ p {
 }
 
 .under {
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 2px 5px;
 }
 
