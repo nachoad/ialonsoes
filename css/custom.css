@@ -7,7 +7,10 @@ body {
   font-size: 1.1rem;
   background-color: #0c0c0c;
   color: #e8e8e8;
+  overflow-x: hidden;
 }
+
+h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 
 .photo {
   width: 220px;
