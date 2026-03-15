@@ -1,298 +1,262 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ignacio Alonso · Bio</title>
+  <meta name="description" content="Bio and career of Ignacio Alonso Delgado. Chief Enterprise Architect at Kyndryl. Associate Professor.">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal website of Ignacio Alonso Delgado. Projects, work, social, etc.">
-    <meta name="author" content="Ignacio Alonso Delgado">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/custom.css">
+</head>
 
-    <!-- meta property for social -->
-    <meta property="og:site_name" content="Ignacio Alonso Delgado" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ignacio Alonso Delgado" />
-    <meta property="og:description" content="Ignacio Alonso Delgado personal website." />
-    <meta property="og:url" content="https://ialonso.es" />
-    <meta property="og:image" content="https://ialonso.es/img/og-ialonso.png" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Ignacio Alonso Delgado" />
-    <meta name="twitter:description" content="Ignacio Alonso Delgado personal website." />
-    <meta name="twitter:url" content="https://ialonso.es" />
-    <meta name="twitter:image" content="https://ialonso.es/img/og-ialonso.png" />
-    <meta name="twitter:site" content="@nachoad" />
+<body>
 
-    <!-- Color for the bars on the smartphones-->
-    <meta name="theme-color" content="#96483e">
-    <meta name="msapplication-navbutton-color" content="#96483e">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#96483e">
+  <!-- ── Navbar ── -->
+  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">ialonso.es</a>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/all.css" rel="stylesheet" type="text/css">
-    <!-- Quito fuente Karla
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap" rel="stylesheet">
-    -->
-
-    <title>Ignacio Alonso Delgado · Experiments</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  </head>
-
-
-  <body>
-
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="https://ialonso.es">ialonso.es</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="https://ialonso.es/bio">Bio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://ialonso.es/experiments">Experiments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://medium.com/@nachoad">Notes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/nachoad">Twitter</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://linkedin.com/in/ignacioalonsodelgado/">LinkedIn</a>
-          </li>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="/bio">Bio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/experiments">Experiments</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://medium.com/@nachoad" target="_blank" rel="noopener">Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://twitter.com/nachoad" target="_blank" rel="noopener">X</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <div class="container" style="margin-top:6em;">
-      <!-- /container open -->
-      <img src="../img/nyc.png" alt="Ignacio Alonso Delgado" class="rounded-circle d-block w-25">
-      <br>
-      <h1>My career</h1>
-      <p>For over a decade, I honed my skills at IBM before transitioning to the spin-off, <span class="kyn">Kyndryl</span>, three years ago. At Kyndryl, I've been able to continue pursuing my passion for technology, always striving to connect technical innovation with tangible business outcomes.</p>
-      <p>I currently hold the role of <span class="under y">Chief Enterprise Architect*</span>, serving a Telco company for over six years. My day-to-day work bridges the gap between business problems and their technology-based solutions. I solve complex issues, such as the digital transformation of legacy systems by reducing technical debt and migrating to the cloud. I also design systems that ensure uninterrupted service for end customers, even in the event of a complete data center failure, and I implement cloud automation solutions that enable auto-scaling to meet fluctuating demand.</p>
-      <p>I have had different roles in my life: business intelligence tech specialist, big data tech specialist, and natural language processing tech specialist. I also worked with IBM Watson solutions (creating chatbots, understanding documents with IA, training watson machine learning models, etc).</p>
-      <p>I belong to the <a href="https://www.globalaea.org/members/group.aspx?id=110572">Association of Enterpise Architects</a> (chapter of Spain), where I help as a member.</p>
-      <p>I'm one of the organizers of the Meetup called <a href="https://www.meetup.com/es/Big-Data-Developers-in-Madrid/">Big Data Developers in Madrid</a>, with more than <span class="under y">4250 members</span>.</p>
-      <div class="alert alert-secondary" role="alert">
-        Check out my professional career at <a href="https://linkedin.com/in/ignacioalonsodelgado/">LinkedIn</a>.
-      </div>
+  <!-- ── Content ── -->
+  <main class="container py-3" style="padding-top: 5rem !important;">
+    <div class="row">
+      <div class="col-lg-8 col-md-10">
 
-      <br><br><br>
-      <h1>Key Skills</h1>
-      <div>
-        <h4>
-          <span class="badge badge-secondary">always learning</span>
-          <span class="badge badge-secondary">adaptability to change</span>
-          <span class="badge badge-secondary">think ahead</span>
-          <span class="badge badge-secondary">proactive</span>
-          <span class="badge badge-secondary">curious</span>
-          <span class="badge badge-secondary">positive attitude</span>
-          <span class="badge badge-secondary">restless</span>
-          <span class="badge badge-secondary">meticulous</span>
-          <span class="badge badge-secondary">public speaking</span>
-          <span class="badge badge-secondary">team work</span>
-          <span class="badge badge-secondary">sketching concepts</span>
-          <span class="badge badge-secondary">architecture diagramming</span>
-          <span class="badge badge-secondary">emotional intelligence</span>
-          <span class="badge badge-secondary">time management</span>
-          <span class="badge badge-secondary">professor</span>
-          <span class="badge badge-light">it architecture</span>
-          <span class="badge badge-light">cloud computing</span>
-          <span class="badge badge-light">infrastructure as code</span>
-          <span class="badge badge-light">python</span>
-          <span class="badge badge-light">automation</span>
-          <span class="badge badge-light">scripting</span>
-          <span class="badge badge-light">data processing</span>
-          <span class="badge badge-light">networking</span>
-          <span class="badge badge-light">analytics</span>
-          <span class="badge badge-light">visualizations</span>
-          <span class="badge badge-light">DevOps</span>
-          <span class="badge badge-light">ITIL</span>
-          <span class="badge badge-light">big data</span>
-          <span class="badge badge-light">NLP</span>
-        </h4>
-      </div>
-
-      <br><br><br>
-      <h1>Responsibilities as IT Architect</h1>
-      <div>
-        <ul>
-          <li>Design, develop, and implement enterprise-wide IT architecture solutions to meet business needs</li>
-          <li>Develop and maintain IT architecture roadmaps</li>
-          <li>Analyze existing IT systems and recommend changes to improve performance and scalability</li>
-          <li>Collaborate with stakeholders to define requirements and develop solutions</li>
-          <li>Develop and maintain system and application architecture diagrams</li>
-          <li>Lead the design and implementation of complex IT projects</li>
-          <li>Develop and maintain IT architecture documentation</li>
-        </ul>
-      </div>
-
-      
-      <br><br><br>
-      <h1>Associate professor in Masters</h1>
-      <p>I enjoy to explaining the things that I know, yes... I enjoy teaching 👨‍🎓. I participate in <span class="under y">Seminars</span> and I give talks as <span class="under y">Associate Professor</span> at several universities and business schools.</p>
-      <p>Here you have a list of topics I usually talk about:</p>
-      <ul>
-        <li>Cloud Computing</li>
-        <li>Visualizations</li>
-        <li>Sentiment Analysis in Social Media</li>
-        <li>Graphs</li>
-        <li>Natural Language Processing (NLP)</li>
-      </ul>
-      <p>Some of the Schools/Universities where I teach: <a
-          href="https://www.ie.edu/es/lifelong-learning/claustro/ignacio-alonso/">IE Business School University</a> (IE), <a
-          href="https://www.upo.es/portal/impe/web/portada?lang=en">Universidad Pablo de Olavide</a> (UPO), <a
-          href="https://www.esic.edu">ESIC Business and Marketing School</a> (ESIC), <a
-          href="https://universidadeuropea.es/en">Universidad Europea</a> (UE), <a
-          href="http://www.cunef.edu/web/guest/home">Colegio Universitario de Estudios Financieros</a> (CUNEF), <a
-          href="https://www.eoi.es/">Escuela de Organización Industrial</a> (EOI), <a
-          href="http://www.uam.es/UAM/Home.htm?language=es">Universidad Autónoma de Madrid</a> (UAM) and <a
-          href="https://madridschoolofmarketing.es/">Madrid School of Marketing</a> (MSMK), among others. </p>
-
-
-      
-      <br><br><br>
-      <h1>Coaching</h1>
-      <p>I like to helping people understand complex technological systems. I have been helping +20 students to develop their Final Master's Project.</p>
-      <p>I have personally <span class="under y">coached people</span> who wanted to have more knowledge in areas such as: cloud computing, IT architecture, visualizations or career changes towards a technological profile, with one-to-one sessions.</p>
-
-
-      
-      <br><br><br>
-      <h1>Certifications</h1>
-      <div class="text-center container">
-          <div class="row">
-            <div class="col-lg-3 col-md-3 col-6"><img src="../img/bio/azure-fundamentals-600x600.png" class="img-fluid"><p>Microsoft Certified: Azure Fundamentals</p> </div>
-            <div class="col-lg-3 col-md-3 col-6"><img src="../img/bio/AWS-solutions-architect-associate.png" class="img-fluid"><p>AWS Certified Solutions Architect – Associate</p> </div>
-            <div class="col-lg-3 col-md-3 col-6"><img src="../img/bio/badge-openca-certified.png" class="img-fluid"><p>Professional Certification: Level 1 - Certified Solution Architect</p> </div>
-            <div class="col-lg-3 col-md-3 col-6"><img src="../img/bio/Architect-Experienced-level-1.png" class="img-fluid"><p>Architect Profession Certification - Level 1 Experienced</p> </div>
-            </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-3 col-6"><img src="../img/bio/Architectural-Thinking-badge.png" class="img-fluid"><p>Architectural Thinking</p> </div>
-            <div class="col-lg-3 col-md-3 col-6"><img src="../img/bio/IBM_Cloud_Essentials_-_Knowledge_Badge.png" class="img-fluid"><p>IBM Cloud Essentials</p> </div>
-            <div class="col-lg-3 col-md-3 col-6"><img src="../img/bio/Badges_v8-07_Practitioner.png" class="img-fluid"><p>Enterprise Design Thinking Practitioner</p> </div>
-            <div class="col-lg-3 col-md-3 col-6"><img src="../img/bio/Telecom-Industry-Jumpstart.png" class="img-fluid"><p>Telecom. Industry Jumpstart</p> </div>
+        <div class="d-flex align-items-center gap-4 mb-5">
+          <img src="https://ialonso.es/img/nyc.png" alt="Ignacio Alonso Delgado" class="photo" style="width:90px;height:90px;">
+          <div>
+            <h1 class="mb-0 fw-bold">Ignacio Alonso</h1>
+            <p class="subtitle mb-0">Chief Enterprise Architect · Associate Professor</p>
           </div>
+        </div>
+
+        <!-- My Career -->
+        <section class="mb-5">
+          <h2 class="section-title">My career</h2>
+          <p class="text-secondary">For over a decade, I honed my skills at IBM before transitioning to the spin-off, Kyndryl, three years ago. At Kyndryl, I've been able to continue pursuing my passion for technology, always striving to connect technical innovation with tangible business outcomes.</p>
+          <p class="text-secondary">I currently hold the role of Chief Enterprise Architect<sup>*</sup>, serving a Telco company for over six years. My day-to-day work bridges the gap between business problems and their technology-based solutions. I solve complex issues, such as the digital transformation of legacy systems by reducing technical debt and migrating to the cloud. I also design systems that ensure uninterrupted service for end customers, even in the event of a complete data center failure, and I implement cloud automation solutions that enable auto-scaling to meet fluctuating demand.</p>
+          <p class="text-secondary">I have had different roles in my life: business intelligence tech specialist, big data tech specialist, and natural language processing tech specialist. I also worked with IBM Watson solutions (creating chatbots, understanding documents with IA, training watson machine learning models, etc).</p>
+          <p class="text-secondary">I belong to the <a href="https://www.globalaea.org/members/group.aspx?id=110572" target="_blank" rel="noopener" class="link-ia">Association of Enterprise Architects</a> (chapter of Spain), where I help as a member.</p>
+          <p class="text-secondary">I'm one of the organizers of the Meetup called <a href="https://www.meetup.com/es/Big-Data-Developers-in-Madrid/" target="_blank" rel="noopener" class="link-ia">Big Data Developers in Madrid</a>, with more than 4250 members.</p>
+          <p class="text-secondary">Check out my professional career at <a href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener" class="link-ia">LinkedIn</a>.</p>
+        </section>
+
+        <!-- Key Skills -->
+        <section class="mb-5">
+          <h2 class="section-title">Key Skills</h2>
+          <p class="skills-cloud text-secondary">
+            always learning · adaptability to change · think ahead · proactive · curious · positive attitude · restless · meticulous · public speaking · team work · sketching concepts · architecture diagramming · emotional intelligence · time management · professor · it architecture · cloud computing · infrastructure as code · python · automation scripting · data processing · networking · analytics · visualizations · DevOps · ITIL · big data · NLP
+          </p>
+        </section>
+
+        <!-- Responsibilities -->
+        <section class="mb-5">
+          <h2 class="section-title">Responsibilities as IT Architect</h2>
+          <ul class="text-secondary">
+            <li>Design, develop, and implement enterprise-wide IT architecture solutions to meet business needs</li>
+            <li>Develop and maintain IT architecture roadmaps</li>
+            <li>Analyze existing IT systems and recommend changes to improve performance and scalability</li>
+            <li>Collaborate with stakeholders to define requirements and develop solutions</li>
+            <li>Develop and maintain system and application architecture diagrams</li>
+            <li>Lead the design and implementation of complex IT projects</li>
+            <li>Develop and maintain IT architecture documentation</li>
+          </ul>
+        </section>
+
+        <!-- Associate Professor -->
+        <section class="mb-5">
+          <h2 class="section-title">Associate professor in Masters</h2>
+          <p class="text-secondary">I enjoy explaining the things that I know, yes... I enjoy teaching 👨‍🎓. I participate in Seminars and I give talks as Associate Professor at several universities and business schools.</p>
+          <p class="text-secondary">Here you have a list of topics I usually talk about:</p>
+          <ul class="text-secondary">
+            <li>Cloud Computing</li>
+            <li>Visualizations</li>
+            <li>Sentiment Analysis in Social Media</li>
+            <li>Graphs</li>
+            <li>Natural Language Processing (NLP)</li>
+          </ul>
+          <p class="text-secondary">Some of the Schools/Universities where I teach:
+            <a href="https://www.ie.edu/es/lifelong-learning/claustro/ignacio-alonso/" target="_blank" rel="noopener" class="link-ia">IE Business School University</a> (IE),
+            <a href="https://www.upo.es/portal/impe/web/portada?lang=en" target="_blank" rel="noopener" class="link-ia">Universidad Pablo de Olavide</a> (UPO),
+            <a href="https://www.esic.edu" target="_blank" rel="noopener" class="link-ia">ESIC Business and Marketing School</a> (ESIC),
+            <a href="https://universidadeuropea.es/en" target="_blank" rel="noopener" class="link-ia">Universidad Europea</a> (UE),
+            <a href="http://www.cunef.edu" target="_blank" rel="noopener" class="link-ia">CUNEF</a>,
+            <a href="https://www.eoi.es/" target="_blank" rel="noopener" class="link-ia">Escuela de Organización Industrial</a> (EOI),
+            <a href="http://www.uam.es" target="_blank" rel="noopener" class="link-ia">Universidad Autónoma de Madrid</a> (UAM) and
+            <a href="https://madridschoolofmarketing.es/" target="_blank" rel="noopener" class="link-ia">Madrid School of Marketing</a> (MSMK), among others.
+          </p>
+        </section>
+
+        <!-- Coaching -->
+        <section class="mb-5">
+          <h2 class="section-title">Coaching</h2>
+          <p class="text-secondary">I like helping people understand complex technological systems. I have been helping +20 students to develop their Final Master's Project.</p>
+          <p class="text-secondary">I have personally coached people who wanted to have more knowledge in areas such as: cloud computing, IT architecture, visualizations or career changes towards a technological profile, with one-to-one sessions.</p>
+        </section>
+
+        <!-- Certifications -->
+        <section class="mb-5">
+          <h2 class="section-title">Certifications</h2>
+          <div class="d-flex flex-wrap gap-4 align-items-center mb-3">
+            <div class="cert-badge text-center">
+              <img src="https://ialonso.es/img/bio/azure-fundamentals-600x600.png" alt="Azure Fundamentals">
+              <p>Microsoft Certified: Azure Fundamentals</p>
+            </div>
+            <div class="cert-badge text-center">
+              <img src="https://ialonso.es/img/bio/AWS-solutions-architect-associate.png" alt="AWS Solutions Architect">
+              <p>AWS Certified Solutions Architect – Associate</p>
+            </div>
+            <div class="cert-badge text-center">
+              <img src="https://ialonso.es/img/bio/badge-openca-certified.png" alt="OpenCA Certified">
+              <p>Professional Certification: Level 1 - Certified Solution Architect</p>
+            </div>
+            <div class="cert-badge text-center">
+              <img src="https://ialonso.es/img/bio/Architect-Experienced-level-1.png" alt="Architect Experienced">
+              <p>Architect Profession Certification - Level 1 Experienced</p>
+            </div>
+            <div class="cert-badge text-center">
+              <img src="https://ialonso.es/img/bio/Architectural-Thinking-badge.png" alt="Architectural Thinking">
+              <p>Architectural Thinking</p>
+            </div>
+            <div class="cert-badge text-center">
+              <img src="https://ialonso.es/img/bio/IBM_Cloud_Essentials_-_Knowledge_Badge.png" alt="IBM Cloud Essentials">
+              <p>IBM Cloud Essentials</p>
+            </div>
+            <div class="cert-badge text-center">
+              <img src="https://ialonso.es/img/bio/Badges_v8-07_Practitioner.png" alt="Enterprise Design Thinking">
+              <p>Enterprise Design Thinking Practitioner</p>
+            </div>
+            <div class="cert-badge text-center">
+              <img src="https://ialonso.es/img/bio/Telecom-Industry-Jumpstart.png" alt="Telecom Industry Jumpstart">
+              <p>Telecom. Industry Jumpstart</p>
+            </div>
+          </div>
+          <a href="https://www.credly.com/users/ignacio-alonso-delgado/badges" target="_blank" rel="noopener" class="btn-ia">
+            <i class="fas fa-certificate"></i> See all my +30 badges
+          </a>
+        </section>
+
+        <!-- My Life -->
+        <section class="mb-5">
+          <h2 class="section-title">My life</h2>
+          <p class="text-secondary">I was born in Madrid, Spain. Although <a href="https://ialonso.es/experiments/exp/mymap/index.html" target="_blank" rel="noopener" class="link-ia">I have been in a lot of countries</a>, I live in Madrid. My life revolves around my wife (which I admire every day) and our children (including our <a href="https://www.instagram.com/watson_puppy/" target="_blank" rel="noopener" class="link-ia">fluffy dog</a> 🐶).</p>
+          <p class="text-secondary">I enjoy taking landscape pictures with my Sony 𝜶6600 camera. Lately I really enjoy making short videos of my travels, and editing them.</p>
+        </section>
+
+        <!-- Public Articles -->
+        <section class="mb-5">
+          <h2 class="section-title">Public articles, presentations, and other stuff</h2>
+          <p class="text-secondary">I used to write articles on Sundays, you can read it on my <a href="https://medium.com/@nachoad" target="_blank" rel="noopener" class="link-ia">Medium account</a>.</p>
+          <p class="text-secondary mb-3">More talks and presentations on the table below.</p>
+
+          <div class="table-responsive">
+            <table class="table table-dark table-borderless bio-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Type</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="https://cloud.withgoogle.com/next/25/speakers?session=CT1-30" target="_blank" rel="noopener" class="link-ia">Google Next · From Chaos to Control: The MasOrange story of streamlining to Google Cloud</a></td>
+                  <td>Talk at Google Next</td>
+                  <td>April 2025</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-como-ayuda-la-nube-digitalizacion-empresas/" target="_blank" rel="noopener" class="link-ia">Seminario | Cómo ayuda la nube en la digitalización de tu empresa</a></td>
+                  <td>Talk at a Seminar</td>
+                  <td>November 2023</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-la-nube-como-acelerador-digital-de-las-empresas/" target="_blank" rel="noopener" class="link-ia">Seminario | La nube como acelerador digital de la empresa</a></td>
+                  <td>Talk at a Seminar</td>
+                  <td>February 2022</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.youtube.com/watch?v=gY5YW8w_K8I" target="_blank" rel="noopener" class="link-ia">Natural Language Processing (NLP) for Dummies</a></td>
+                  <td>Talk at a Meetup</td>
+                  <td>June 2018</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.youtube.com/watch?v=5omSvmhRwV0&list=PLGexnaYV5MSKhxrKluc2c4-XOVl_qNwhW" target="_blank" rel="noopener" class="link-ia">Watson Explorer Community Edition Tutorial</a></td>
+                  <td>Youtube video playlist</td>
+                  <td>March 2018</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.youtube.com/watch?v=3JCt-NgqYi8&t=1s" target="_blank" rel="noopener" class="link-ia">Data Science Experience + Watson Machine Learning</a></td>
+                  <td>Video</td>
+                  <td>December 2017</td>
+                </tr>
+                <tr>
+                  <td><a href="https://retina.elpais.com/retina/2017/05/30/tendencias/1496154380_977310.html" target="_blank" rel="noopener" class="link-ia">El País: El 'big data' ayuda a tomar decisiones, pero lo importante es la intuición</a></td>
+                  <td>Collaboration on the article</td>
+                  <td>June 2017</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.silicon.es/a-fondo-acabara-inteligencia-artificial-data-scientist-2340008" target="_blank" rel="noopener" class="link-ia">Silicon: A fondo: ¿Acabará la inteligencia artificial con el data scientist?</a></td>
+                  <td>Collaboration on the article</td>
+                  <td>May 2017</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.youtube.com/watch?v=PpNb1sHF2hA" target="_blank" rel="noopener" class="link-ia">¿Qué es un científico de datos?</a></td>
+                  <td>Video</td>
+                  <td>March 2017</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.youtube.com/watch?v=6UcO8HpKduc" target="_blank" rel="noopener" class="link-ia">Data Science Experience (DSX) + Spark SQL Intro</a></td>
+                  <td>Video</td>
+                  <td>December 2016</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.youtube.com/watch?v=VasEE2cw2Bg" target="_blank" rel="noopener" class="link-ia">IBM Business Connect 2016 - Data Science Experience</a></td>
+                  <td>Talk</td>
+                  <td>November 2016</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.ibm.com/blogs/think/es-es/2014/11/04/las-redes-sociales-estas-dentro-o-no/" target="_blank" rel="noopener" class="link-ia">Las Redes Sociales: ¿estás dentro o no?</a></td>
+                  <td>IBM Blog article</td>
+                  <td>November 2014</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <p class="mb-5">Come on! Now that you know everything about me, let's contact by <a href="https://twitter.com/nachoad" target="_blank" rel="noopener" class="link-ia">X</a>, and talk about you! 😃</p>
+
+        <!-- Footnote -->
+        <p class="text-secondary" style="font-size:.8rem; border-top: 1px solid rgba(255,255,255,.07); padding-top:1rem;">
+          <sup>*</sup>"Enterprise Architecture (EA) is the practice of analyzing, designing, planning and implementing solutions to satisfy business strategies." — OpenGroup
+        </p>
+
       </div>
-      <br>
-      <div class="text-center">
-        <a class="btn btn-primary btn-lg btn-block" href="https://www.credly.com/users/ignacio-alonso-delgado/badges">See all my +30 badges 👉</a>
-      </div>
+    </div>
+  </main>
 
-      
-      <br><br><br>
-      <h1>My life</h1>
-      <p>I was born in Madrid, Spain. Although <a href="https://ialonso.es/experiments/exp/mymap/index.html">I have been in a lot of countries</a>, I live in Madrid. My life revolves around my wife (which I admire every day) and our children (including our <a href="https://www.instagram.com/watson_puppy/">fluffy dog</a> 🐶).</p>
-      <p>I enjoy taking landscape pictures with my Sony 𝜶6600 camera. Lately I really enjoy making short videos of my travels, and editing them.</p>
-
-
-      <br><br><br>
-      <h1 class="d-none d-md-inline">Public articles, presentations, and other stuff</h1>
-      <h1 class="d-md-none">Public articles and other stuff</h1>
-      <p>I used to write articles on Sundays, you can read it on my <a href="https://medium.com/@nachoad">Medium account</a>.</p>
-      <p>More talks and presentations on the table below.</p>
-      <div class="table-responsive table-hover">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Type</th>
-              <th scope="col">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Google Next · <a href="https://cloud.withgoogle.com/next/25/speakers?session=CT1-30">From Chaos to Control: The MasOrange story of streamlining to Google Cloud</a></th>
-              <td>Talk at Google Next</td>
-              <td>April 2025</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-como-ayuda-la-nube-digitalizacion-empresas/">Seminario | Cómo ayuda la nube en la digitalización de tu empresa</a></th>
-              <td>Talk at a Seminar</td>
-              <td>November 2023</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-la-nube-como-acelerador-digital-de-las-empresas/">Seminario | La nube como acelerador digital de la empresa</a></th>
-              <td>Talk at a Seminar</td>
-              <td>February 2022</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.youtube.com/watch?v=gY5YW8w_K8I">Natural Language Processing (NLP) for Dummies</a></th>
-              <td>Talk at a Meetup</td>
-              <td>June 2018</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.youtube.com/watch?v=5omSvmhRwV0&list=PLGexnaYV5MSKhxrKluc2c4-XOVl_qNwhW">Watson Explorer Community Edition Tutorial</a></th>
-              <td>Youtube video playlist</td>
-              <td>March 2018</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.youtube.com/watch?v=3JCt-NgqYi8&t=1s">Data Science Experience + Watson Machine Learning</a></th>
-              <td>Video</td>
-              <td>December 2017</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://retina.elpais.com/retina/2017/05/30/tendencias/1496154380_977310.html">El País: El ‘big data’ ayuda a tomar decisiones, pero lo importante es la intuición</a></th>
-              <td>Collaboration on the article</td>
-              <td>June 2017</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="http://www.silicon.es/a-fondo-acabara-inteligencia-artificial-data-scientist-2340008">Silicon: A fondo: ¿Acabará la inteligencia artificial con el data scientist?</a></th>
-              <td>Collaboration on the article</td>
-              <td>May 2017</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.youtube.com/watch?v=PpNb1sHF2hA">¿Qué es un científico de datos?</a></th>
-              <td>Video</td>
-              <td>March 2017</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.youtube.com/watch?v=6UcO8HpKduc">Data Science Experience (DSX) + Spark SQL Intro</a></th>
-              <td>Video</td>
-              <td>December 2016</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.youtube.com/watch?v=VasEE2cw2Bg">IBM Business Connect 2016 - Data Science Experience</a></th>
-              <td>Talk</td>
-              <td>November 2016</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="https://www.ibm.com/blogs/think/es-es/2014/11/04/las-redes-sociales-estas-dentro-o-no/">Las Redes Sociales: ¿estás dentro o no?</a></th>
-              <td>IBM Blog article</td>
-              <td>November 2014</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <br><br>
-      <div class="alert alert-warning" role="alert">
-        Come on! Now that you know everything about me, let's contact by <a
-          href="https://twitter.com/nachoad">Twitter</a>, and talk about you! 😃
-      </div>
-      <br><br>
-
-      <br><br><br>
-      <p>*“Enterprise Architecture (EA) is the practice of analyzing, designing, planning and implementing solutions to satisfy business strategies.” — OpenGroup</p>
-      <br>
-      
-    </div><!-- /container close-->
-
-
-
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-  </body>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
