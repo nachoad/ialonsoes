@@ -86,13 +86,10 @@ footer {
 
 /* Section headings */
 .section-title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: .02em;
-  color: var(--yellow);
+  color: #e8e8e8;
   margin-bottom: 1rem;
-  padding-bottom: .4rem;
-  border-bottom: 1px solid rgba(255,255,255,.07);
 }
 
 /* Inline links */
@@ -127,8 +124,10 @@ footer {
 
 /* Articles table */
 .bio-table {
-  background: transparent;
+  background-color: #0c0c0c;
   font-size: .9rem;
+  --bs-table-bg: #0c0c0c;
+  --bs-table-color: rgba(255,255,255,.6);
 }
 .bio-table thead th {
   color: rgba(255,255,255,.4);
