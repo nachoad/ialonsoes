@@ -8,6 +8,7 @@ body {
   background-color: #0c0c0c;
   color: #e8e8e8;
   overflow-x: hidden;
+  --bs-secondary-color: rgba(255,255,255,.7);
 }
 
 h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
@@ -115,12 +116,6 @@ footer {
   object-fit: contain;
   margin-bottom: .4rem;
 }
-.cert-badge p {
-  font-size: .7rem;
-  color: rgba(255,255,255,.45);
-  max-width: 100px;
-  margin: 0 auto;
-}
 
 /* Articles table */
 .bio-table {
@@ -138,8 +133,15 @@ footer {
   padding-bottom: .6rem;
 }
 .bio-table td {
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.75);
   vertical-align: middle;
   border-bottom: 1px solid rgba(255,255,255,.05) !important;
   padding: .65rem .5rem;
+}
+
+.cert-badge p {
+  font-size: .7rem;
+  color: rgba(255,255,255,.6);
+  max-width: 100px;
+  margin: 0 auto;
 }
