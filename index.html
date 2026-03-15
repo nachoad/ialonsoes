@@ -1,76 +1,101 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal website of Ignacio Alonso Delgado. Projects, social, work, etc.">
-    <meta name="author" content="Ignacio Alonso Delgado">
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ignacio Alonso Delgado</title>
+  <meta name="description" content="Chief Enterprise Architect at Kyndryl. Associate Professor.">
 
-    <!-- meta property for social -->
-    <meta property="og:site_name" content="Ignacio Alonso Delgado" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ignacio Alonso Delgado" />
-    <meta property="og:description" content="Ignacio Alonso Delgado personal website. IT Architect." />
-    <meta property="og:url" content="https://ialonso.es" />
-    <meta property="og:image" content="https://ialonso.es/img/og-ialonso.png" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Ignacio Alonso Delgado" />
-    <meta name="twitter:description" content="Ignacio Alonso Delgado personal website. IT Architect." />
-    <meta name="twitter:url" content="https://ialonso.es" />
-    <meta name="twitter:image" content="https://ialonso.es/img/og-ialonso.png" />
-    <meta name="twitter:site" content="@nachoad" />
+  <!-- Bootstrap 5.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-    <!-- Color for the bars on the smartphones-->
-    <meta name="theme-color" content="#96483e">
-    <meta name="msapplication-navbutton-color" content="#96483e">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#96483e">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/all.css" rel="stylesheet" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
-    <!-- Quito fuente Karla
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap" rel="stylesheet">
-    -->
+<body>
 
-    <title>Ignacio Alonso D.</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  </head>
-  <body class="py-4">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md fixed-top">
     <div class="container">
-
-      <img src="img/nyc.png" alt="Ignacio Alonso Delgado" class="rounded-circle d-block w-25">
-      <br>
-
-      <h1>Hi, I'm Ignacio 👋</h1>
-      <br>
-      <p>Nice to meet you!</p>
-      <p>I'm a <span class="under y">Chief Enterprise Architect</span> at <span class="kyn">Kyndryl</span>, specializing in <span class="under y">enterprise-scale infrastructure</span> currently working for an international telecommunications company. My focus centers on designing and implementing resilient architectures that bridge on-premises data centers as well as multi-cloud environments (including GCP, AWS, and OCI).</p>
-      <p>Throughout my career, I have built expertise across the full technology stack: compute, network, storage, security and cyber resiliency. I lead a team of subject matter experts who bring deep technical knowledge to every solution we architect. One of my proudest achievements was designing and implementing a private cloud infrastructure based on Red Hat technologies.</p>
-      <p>My approach to enterprise architecture is fundamentally strategic. I evaluate every technical decision through multiple lenses: how will this solution scale as the business grows? How does it integrate with existing systems? What happens when dependencies fail? Can we automate this to reduce operational overhead? This forward-thinking methodology ensures that the solutions we implement today remain valuable and adaptable for years to come.</p>
-      <p>Beyond my corporate role, I serve as an <span class="under y">Associate Professor</span> in various Master's programs, where I teach courses on cloud computing, big data, analytics, data visualization and natural language processing. This academic engagement keeps me connected to emerging trends and allows me to contribute to the next generation of technology professionals.</p>
-      <p>Would you like to know me better? You can find additional ways to connect with me through the links below.</p>
-      <p>Let's go!</p>
-
-      <div style="margin-top: 1em">
-          <a href="./bio" class="btn btn-warning"><i class="fa fa-male fa-fw"></i> CV/Bio</a>
-          <a href="./experiments" class="btn btn-warning"><i class="fas fa-flask"></i> Experiments</a>
-          <a href="https://twitter.com/nachoad" class="btn btn-dark"><i class="fab fa-twitter"></i> Twitter</a>
-          <a href="https://es.linkedin.com/in/ignacioalonsodelgado" class="btn btn-dark"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-          <a href="https://www.youtube.com/channel/UC59Y86nFk7eg-5Ql4Xi3peQ" class="btn btn-dark"><i class="fab fa-youtube"></i> YouTube</a>
-          <a href="https://medium.com/@nachoad" class="btn btn-dark"><i class="fab fa-medium-m"></i> Notes</a>
-          <a href="https://www.credly.com/users/ignacio-alonso-delgado/badges" class="btn btn-dark"><i class="fas fa-certificate"></i> Badges</a>
+      <a class="navbar-brand" href="/">Ignacio Alonso D.</a>
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="/bio">Bio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/experiments">Experiments</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://medium.com/@nachoad" target="_blank" rel="noopener">Notes</a></li>
+        </ul>
       </div>
-      <br>
-      <br>
-
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero d-flex align-items-center min-vh-100">
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <!-- Photo -->
+          <div class="col-md-4 d-flex justify-content-center">
+            <img src="https://ialonso.es/img/nyc.png"
+                 alt="Ignacio Alonso Delgado"
+                 class="photo-round">
+          </div>
+
+          <!-- Content -->
+          <div class="col-md-8 fade-in">
+            <h1 class="display-3 fw-bold mb-1">Hi, I'm Ignacio <span class="wave">👋</span></h1>
+            <p class="subtitle mb-4">Chief Enterprise Architect · Associate Professor</p>
+
+            <p class="mb-3">Nice to meet you!</p>
+
+            <p class="text-secondary">I'm a Chief Enterprise Architect at Kyndryl, specializing in enterprise-scale infrastructure currently working for an international telecommunications company. My focus centers on designing and implementing resilient architectures that bridge on-premises data centers as well as multi-cloud environments (including GCP, AWS, and OCI).</p>
+
+            <p class="text-secondary">Throughout my career, I have built expertise across the full technology stack: compute, network, storage, security and cyber resiliency. I lead a team of subject matter experts who bring deep technical knowledge to every solution we architect. One of my proudest achievements was designing and implementing a private cloud infrastructure based on Red Hat technologies.</p>
+
+            <p class="text-secondary">My approach to enterprise architecture is fundamentally strategic. I evaluate every technical decision through multiple lenses: how will this solution scale as the business grows? How does it integrate with existing systems? What happens when dependencies fail? Can we automate this to reduce operational overhead? This forward-thinking methodology ensures that the solutions we implement today remain valuable and adaptable for years to come.</p>
+
+            <p class="text-secondary">Beyond my corporate role, I serve as an Associate Professor in various Master's programs, where I teach courses on cloud computing, big data, analytics, data visualization and natural language processing. This academic engagement keeps me connected to emerging trends and allows me to contribute to the next generation of technology professionals.</p>
+
+            <p class="mb-1">Would you like to know me better? You can find additional ways to connect with me through the links below.</p>
+            <p class="fw-semibold mb-4">Let's go!</p>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-wrap gap-2">
+              <a href="/bio"                                                          class="btn btn-ia">CV/Bio</a>
+              <a href="/experiments"                                                  class="btn btn-ia">Experiments</a>
+              <a href="https://twitter.com/nachoad"                                  target="_blank" rel="noopener" class="btn btn-ia">Twitter</a>
+              <a href="https://es.linkedin.com/in/ignacioalonsodelgado"              target="_blank" rel="noopener" class="btn btn-ia">LinkedIn</a>
+              <a href="https://www.youtube.com/channel/UC59Y86nFk7eg-5Ql4Xi3peQ"    target="_blank" rel="noopener" class="btn btn-ia">YouTube</a>
+              <a href="https://medium.com/@nachoad"                                  target="_blank" rel="noopener" class="btn btn-ia">Notes</a>
+              <a href="https://www.credly.com/users/ignacio-alonso-delgado/badges"  target="_blank" rel="noopener" class="btn btn-ia">Badges</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4">
+    <div class="container">
+      <p class="text-secondary small text-center mb-0">
+        © <span id="year"></span> Ignacio Alonso Delgado
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
