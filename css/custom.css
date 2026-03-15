@@ -58,3 +58,89 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 footer {
   border-top: 1px solid rgba(255,255,255,.07);
 }
+
+
+/* ==============================================
+   Bio page extras
+   ============================================== */
+
+/* Navbar */
+.navbar {
+  background: rgba(12, 12, 12, .88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: .03em;
+  color: #fff !important;
+}
+.nav-link {
+  font-size: .85rem;
+  color: rgba(255,255,255,.45) !important;
+  transition: color .2s;
+}
+.nav-link:hover,
+.nav-link.active { color: #fff !important; }
+
+/* Section headings */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+/* Inline links */
+.link-ia {
+  color: rgba(255,255,255,.7);
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,.25);
+  text-underline-offset: 3px;
+  transition: color .2s;
+}
+.link-ia:hover { color: #fff; text-decoration-color: rgba(255,255,255,.6); }
+
+/* Skills cloud */
+.skills-cloud {
+  line-height: 2;
+  font-size: 1rem;
+}
+
+/* Certification badges */
+.cert-badge img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: .4rem;
+}
+.cert-badge p {
+  font-size: .7rem;
+  color: rgba(255,255,255,.45);
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+/* Articles table */
+.bio-table {
+  background: transparent;
+  font-size: .9rem;
+}
+.bio-table thead th {
+  color: rgba(255,255,255,.4);
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,.1) !important;
+  padding-bottom: .6rem;
+}
+.bio-table td {
+  color: rgba(255,255,255,.6);
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255,255,255,.05) !important;
+  padding: .65rem .5rem;
+}
