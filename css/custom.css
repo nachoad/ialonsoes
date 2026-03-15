@@ -8,7 +8,7 @@ body {
   background-color: #0c0c0c;
   color: #e8e8e8;
   overflow-x: hidden;
-  --bs-secondary-color: rgba(255,255,255,.7);
+  --bs-secondary-color: rgba(255,255,255,.82);
 }
 
 h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
@@ -87,7 +87,7 @@ footer {
 
 /* Section headings */
 .section-title {
-  font-size: 1.4rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: #e8e8e8;
   margin-bottom: 1rem;
@@ -103,18 +103,33 @@ footer {
 }
 .link-ia:hover { color: #fff; text-decoration-color: rgba(255,255,255,.6); }
 
-/* Skills cloud */
+/* Skills tags */
 .skills-cloud {
-  line-height: 2;
-  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.skill-tag {
+  font-size: .82rem;
+  color: rgba(255,255,255,.8);
+  background: rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: .28rem .8rem;
+  white-space: nowrap;
 }
 
 /* Certification badges */
 .cert-badge img {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   object-fit: contain;
-  margin-bottom: .4rem;
+  margin-bottom: .5rem;
+}
+
+.cert-badge p {
+  font-size: .72rem;
+  color: rgba(255,255,255,.6);
+  margin: 0 auto;
 }
 
 /* Articles table */
@@ -122,7 +137,7 @@ footer {
   background-color: #0c0c0c;
   font-size: .9rem;
   --bs-table-bg: #0c0c0c;
-  --bs-table-color: rgba(255,255,255,.6);
+  --bs-table-color: rgba(255,255,255,.82);
 }
 .bio-table thead th {
   color: rgba(255,255,255,.4);
@@ -133,7 +148,7 @@ footer {
   padding-bottom: .6rem;
 }
 .bio-table td {
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.82);
   vertical-align: middle;
   border-bottom: 1px solid rgba(255,255,255,.05) !important;
   padding: .65rem .5rem;
