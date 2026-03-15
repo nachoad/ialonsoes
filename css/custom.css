@@ -1,114 +1,56 @@
-/* ==============================================
-   ialonso.es — custom.css
-   Base: Bootstrap 5.3 dark (data-bs-theme="dark")
-   ============================================== */
-
-/* ── Variables ── */
 :root {
-  --ia-bg:      #0c0c0c;
-  --ia-border:  rgba(255, 255, 255, .07);
-  --ia-muted:   rgba(255, 255, 255, .45);
-  --ia-yellow:  #f5c842;
-  --ia-yellow-hover: #e0b530;
+  --yellow: #f5c842;
 }
 
-/* ── Base ── */
 body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: var(--ia-bg);
+  font-family: 'Google Sans Flex', sans-serif;
+  background-color: #0c0c0c;
   color: #e8e8e8;
 }
 
-h1, h2, h3, .navbar-brand {
-  font-family: 'Syne', sans-serif;
+.photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,.1);
 }
 
-/* ── Navbar ── */
-.navbar {
-  background: rgba(12, 12, 12, .85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--ia-border);
-}
-
-.navbar-brand {
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: .04em;
-  color: #fff !important;
-}
-
-.nav-link {
-  font-size: .825rem;
-  letter-spacing: .04em;
-  color: var(--ia-muted) !important;
-  transition: color .2s;
-}
-.nav-link:hover { color: #fff !important; }
-
-/* ── Hero ── */
-.hero { padding-top: 6rem; padding-bottom: 3rem; }
-
-/* Subtitle below h1 */
 .subtitle {
   font-size: 1rem;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--ia-muted);
+  color: rgba(255,255,255,.45);
 }
 
-/* Fade-in animation */
-.fade-in {
-  animation: fadeUp .65s ease both;
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Waving hand */
 .wave {
   display: inline-block;
   transform-origin: 70% 70%;
   animation: wave 2.4s ease-in-out infinite;
 }
 @keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  20%       { transform: rotate(20deg); }
-  60%       { transform: rotate(-8deg); }
+  0%,100% { transform: rotate(0deg); }
+  20%     { transform: rotate(20deg); }
+  60%     { transform: rotate(-8deg); }
 }
 
-/* ── Profile photo ── */
-.photo-round {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, .1);
-  display: block;
-}
-
-/* ── Yellow buttons ── */
 .btn-ia {
+  display: inline-block;
   font-size: .82rem;
   font-weight: 600;
   color: #111;
-  background-color: var(--ia-yellow);
-  border: none;
+  background: var(--yellow);
   border-radius: 6px;
   padding: .42rem 1.05rem;
-  transition: background-color .2s, transform .1s;
+  text-decoration: none;
+  transition: background .2s, transform .1s;
 }
 .btn-ia:hover {
-  background-color: var(--ia-yellow-hover);
+  background: #e0b530;
   color: #111;
   transform: translateY(-1px);
 }
-.btn-ia:active {
-  transform: translateY(0);
-}
 
-/* ── Footer ── */
 footer {
-  border-top: 1px solid var(--ia-border);
+  border-top: 1px solid rgba(255,255,255,.07);
 }
