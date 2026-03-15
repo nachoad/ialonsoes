@@ -160,3 +160,57 @@ footer {
   max-width: 100px;
   margin: 0 auto;
 }
+
+
+/* ==============================================
+   Experiments page
+   ============================================== */
+
+.exp-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #e8e8e8;
+  transition: background .2s, border-color .2s, transform .15s;
+}
+.exp-card:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.18);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.exp-icon {
+  font-size: 1.2rem;
+  color: var(--yellow);
+  width: 2.2rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.exp-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: .15rem;
+}
+
+.exp-desc {
+  font-size: .85rem;
+  color: rgba(255,255,255,.5);
+}
+
+.exp-arrow {
+  margin-left: auto;
+  color: rgba(255,255,255,.2);
+  font-size: .8rem;
+  flex-shrink: 0;
+  transition: color .2s;
+}
+.exp-card:hover .exp-arrow {
+  color: rgba(255,255,255,.5);
+}
