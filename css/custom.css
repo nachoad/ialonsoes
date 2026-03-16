@@ -5,6 +5,7 @@
 body {
   font-family: 'Google Sans Flex', sans-serif;
   font-size: 1.1rem;
+  letter-spacing: .02em;
   background-color: #0c0c0c;
   color: #e8e8e8;
   overflow-x: hidden;
