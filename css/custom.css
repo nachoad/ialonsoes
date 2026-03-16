@@ -55,7 +55,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   color: #111;
   background: #efefef;
   border-radius: 6px;
-  padding: .42rem 1.05rem;
+  padding: .6rem 1.3rem;
   text-decoration: none;
   transition: background .2s, transform .1s;
 }
