@@ -116,7 +116,6 @@ footer {
   gap: .5rem;
 }
 .skill-tag {
-  font-size: .82rem;
   color: rgba(255,255,255,.8);
   background: rgba(255,255,255,.08);
   border-radius: 20px;
@@ -131,9 +130,7 @@ footer {
   object-fit: contain;
   margin-bottom: .5rem;
 }
-
 .cert-badge p {
-  font-size: .72rem;
   color: rgba(255,255,255,.6);
   margin: 0 auto;
 }
@@ -141,13 +138,11 @@ footer {
 /* Articles table */
 .bio-table {
   background-color: #111318;
-  font-size: .9rem;
   --bs-table-bg: #111318;
   --bs-table-color: rgba(255,255,255,.82);
 }
 .bio-table thead th {
   color: rgba(255,255,255,.4);
-  font-size: .75rem;
   letter-spacing: .06em;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(255,255,255,.1) !important;
@@ -158,13 +153,6 @@ footer {
   vertical-align: middle;
   border-bottom: 1px solid rgba(255,255,255,.05) !important;
   padding: .65rem .5rem;
-}
-
-.cert-badge p {
-  font-size: .7rem;
-  color: rgba(255,255,255,.6);
-  max-width: 100px;
-  margin: 0 auto;
 }
 
 
