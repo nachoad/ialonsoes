@@ -9,7 +9,7 @@ body {
   background-color: #111318;
   color: #e8e8e8;
   overflow-x: hidden;
-  --bs-secondary-color: rgba(255,255,255,.45);
+  --bs-secondary-color: #a4a4a4;
 }
 
 h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
@@ -93,7 +93,7 @@ footer {
 
 /* Section headings */
 .section-title {
-  font-size: 1.9rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #e8e8e8;
   margin-bottom: 1rem;
