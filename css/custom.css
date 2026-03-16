@@ -9,7 +9,7 @@ body {
   background-color: #111318;
   color: #e8e8e8;
   overflow-x: hidden;
-  --bs-secondary-color: #a4a4a4;
+  --bs-secondary-color: #c9c9c9;
 }
 
 h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
