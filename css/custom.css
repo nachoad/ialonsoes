@@ -14,7 +14,7 @@ body {
 /* Override Bootstrap dark theme secondary color */
 .text-secondary,
 .text-secondary a {
-  color: #e5e5e5 !important;
+  color: #cdcdcd !important;
 }
 
 h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
@@ -53,14 +53,14 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   font-size: .82rem;
   font-weight: 600;
   color: #111;
-  background: var(--yellow);
+  background: #efefef;
   border-radius: 6px;
   padding: .42rem 1.05rem;
   text-decoration: none;
   transition: background .2s, transform .1s;
 }
 .btn-ia:hover {
-  background: #e0b530;
+  background: #fff;
   color: #111;
   transform: translateY(-1px);
 }
@@ -128,7 +128,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .bio-table {
   background-color: #111318;
   --bs-table-bg: #111318;
-  --bs-table-color: #e5e5e5;
+  --bs-table-color: #cdcdcd;
 }
 .bio-table thead th {
   color: rgba(255,255,255,.4);
@@ -138,7 +138,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   padding-bottom: .6rem;
 }
 .bio-table td {
-  color: #e5e5e5;
+  color: #cdcdcd;
   vertical-align: middle;
   border-bottom: 1px solid rgba(255,255,255,.05) !important;
   padding: .65rem .5rem;
@@ -174,7 +174,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   margin-bottom: .45rem;
 }
 .exp-card-desc {
-  color: #e5e5e5;
+  color: #cdcdcd;
   flex-grow: 1;
   line-height: 1.6;
 }
