@@ -6,10 +6,10 @@ body {
   font-family: 'Google Sans Flex', sans-serif;
   font-size: 1.1rem;
   letter-spacing: .02em;
-  background-color: #0c0c0c;
+  background-color: #111318;
   color: #e8e8e8;
   overflow-x: hidden;
-  --bs-secondary-color: rgba(255,255,255,.55);
+  --bs-secondary-color: rgba(255,255,255,.45);
 }
 
 h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
@@ -34,7 +34,11 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   color: rgba(255,255,255,.45);
 }
 
-.wave {
+.photo-right {
+  float: right;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
   display: inline-block;
   transform-origin: 70% 70%;
   animation: wave 2.4s ease-in-out infinite;
@@ -73,7 +77,7 @@ footer {
 
 /* Navbar */
 .navbar {
-  background: rgba(12, 12, 12, .88);
+  background: rgba(17, 19, 24, .88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,.07);
@@ -140,9 +144,9 @@ footer {
 
 /* Articles table */
 .bio-table {
-  background-color: #0c0c0c;
+  background-color: #111318;
   font-size: .9rem;
-  --bs-table-bg: #0c0c0c;
+  --bs-table-bg: #111318;
   --bs-table-color: rgba(255,255,255,.82);
 }
 .bio-table thead th {
