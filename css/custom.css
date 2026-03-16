@@ -164,51 +164,55 @@ footer {
    Experiments page
    ============================================== */
 
-.exp-card {
+.exp-card-v2 {
   display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  padding: 1rem 1.2rem;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.08);
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
   color: #e8e8e8;
   transition: background .2s, border-color .2s, transform .15s;
 }
-.exp-card:hover {
+.exp-card-v2:hover {
   background: rgba(255,255,255,.09);
   border-color: rgba(255,255,255,.18);
   color: #fff;
-  transform: translateX(4px);
+  transform: translateY(-3px);
 }
 
-.exp-icon {
-  font-size: 1.2rem;
+.exp-card-icon {
+  font-size: 1.5rem;
   color: var(--yellow);
-  width: 2.2rem;
-  text-align: center;
-  flex-shrink: 0;
+  margin-bottom: .85rem;
 }
 
-.exp-title {
+.exp-card-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: .45rem;
+}
+
+.exp-card-desc {
+  font-size: .95rem;
+  color: #c9c9c9;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.exp-card-link {
+  margin-top: 1.1rem;
+  font-size: .82rem;
   font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: .15rem;
+  color: var(--yellow);
+  letter-spacing: .03em;
 }
-
-.exp-desc {
-  font-size: .85rem;
-  color: rgba(255,255,255,.5);
+.exp-card-link i {
+  font-size: .7rem;
+  transition: transform .2s;
 }
-
-.exp-arrow {
-  margin-left: auto;
-  color: rgba(255,255,255,.2);
-  font-size: .8rem;
-  flex-shrink: 0;
-  transition: color .2s;
-}
-.exp-card:hover .exp-arrow {
-  color: rgba(255,255,255,.5);
+.exp-card-v2:hover .exp-card-link i {
+  transform: translateX(4px);
 }
