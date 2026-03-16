@@ -34,11 +34,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   color: rgba(255,255,255,.45);
 }
 
-.photo-right {
-  float: right;
-  margin-left: 2rem;
-  margin-bottom: 1.5rem;
-}
+.wave {
   display: inline-block;
   transform-origin: 70% 70%;
   animation: wave 2.4s ease-in-out infinite;
