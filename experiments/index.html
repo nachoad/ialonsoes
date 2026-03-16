@@ -15,17 +15,15 @@
 
 <body>
 
-  <!-- ── Navbar ── -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-md fixed-top">
     <div class="container">
       <a class="navbar-brand" href="/">ialonso.es</a>
-
       <button class="navbar-toggler border-0" type="button"
               data-bs-toggle="collapse" data-bs-target="#navMenu"
               aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="/bio">Bio</a></li>
@@ -38,84 +36,82 @@
     </div>
   </nav>
 
-  <!-- ── Content ── -->
-  <main class="container py-3" style="padding-top: 5rem !important;">
-    <div class="row">
-      <div class="col-lg-8 col-md-10">
+  <!-- Content -->
+  <main class="container mt-5 pt-4 pb-5">
+    <div class="col-lg-10 col-md-11 mx-auto">
 
-        <h1 class="fw-bold mb-2">Experiments</h1>
-        <p class="text-secondary mb-5">Welcome! I usually post my (public) experiments on this page. Feel free to investigate them. If you have any questions, <a href="https://twitter.com/nachoad" target="_blank" rel="noopener" class="link-ia">X</a> is the best way to contact with me.</p>
+      <h1 class="fw-bold mb-2">Experiments</h1>
+      <p class="text-secondary mb-5">Here you can find some of the public experiments I put together whenever I manage to carve out a bit of time. Some of them are a few years old, others are more recent — all of them were fun to build. Feel free to explore, and if you have any questions, <a href="https://twitter.com/nachoad" target="_blank" rel="noopener" class="link-ia">X</a> is the best way to reach me.</p>
 
-        <div class="d-flex flex-column gap-3">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
 
-          <a href="https://farmaciasdeguardiaparacuellos.es/" target="_blank" rel="noopener" class="exp-card">
-            <div class="exp-icon"><i class="fas fa-pills"></i></div>
-            <div>
-              <div class="exp-title">Farmacias de Guardia</div>
-              <div class="exp-desc">Una web que se actualiza cada día y muestra la farmacia de guardia de ese día.</div>
-            </div>
-            <i class="fas fa-arrow-right exp-arrow"></i>
+        <div class="col">
+          <a href="https://farmaciasdeguardiaparacuellos.es/" target="_blank" rel="noopener" class="exp-card-v2">
+            <div class="exp-card-icon"><i class="fas fa-pills"></i></div>
+            <div class="exp-card-title">Farmacias de Guardia</div>
+            <div class="exp-card-desc">Una web que se actualiza cada día y muestra la farmacia de guardia de ese día en Paracuellos de Jarama.</div>
+            <div class="exp-card-link">Visit <i class="fas fa-arrow-right"></i></div>
           </a>
-
-          <a href="https://ialonso.es/experiments/exp/mymap/index.html" class="exp-card">
-            <div class="exp-icon"><i class="fas fa-map-marked-alt"></i></div>
-            <div>
-              <div class="exp-title">My Map</div>
-              <div class="exp-desc">A map with all the countries I have visited.</div>
-            </div>
-            <i class="fas fa-arrow-right exp-arrow"></i>
-          </a>
-
-          <a href="https://ialonso.es/experiments/exp/connected/index.html" class="exp-card">
-            <div class="exp-icon"><i class="fas fa-project-diagram"></i></div>
-            <div>
-              <div class="exp-title">Connected</div>
-              <div class="exp-desc">An interactive network graph visualization.</div>
-            </div>
-            <i class="fas fa-arrow-right exp-arrow"></i>
-          </a>
-
-          <a href="https://ialonso.es/experiments/exp/timeline/index.html" class="exp-card">
-            <div class="exp-icon"><i class="fas fa-stream"></i></div>
-            <div>
-              <div class="exp-title">Friends timeline</div>
-              <div class="exp-desc">A visual timeline of friends and connections.</div>
-            </div>
-            <i class="fas fa-arrow-right exp-arrow"></i>
-          </a>
-
-          <a href="https://ialonso.es/experiments/exp/printer/index.html" class="exp-card">
-            <div class="exp-icon"><i class="fas fa-print"></i></div>
-            <div>
-              <div class="exp-title">iAlonso Printer</div>
-              <div class="exp-desc">A fun little printing experiment.</div>
-            </div>
-            <i class="fas fa-arrow-right exp-arrow"></i>
-          </a>
-
-          <a href="https://www.youtube.com/channel/UC59Y86nFk7eg-5Ql4Xi3peQ" target="_blank" rel="noopener" class="exp-card">
-            <div class="exp-icon"><i class="fab fa-youtube"></i></div>
-            <div>
-              <div class="exp-title">Digital Productivity YouTube channel</div>
-              <div class="exp-desc">Videos about productivity, technology and tools.</div>
-            </div>
-            <i class="fas fa-arrow-right exp-arrow"></i>
-          </a>
-
-          <a href="https://medium.com/@nachoad/" target="_blank" rel="noopener" class="exp-card">
-            <div class="exp-icon"><i class="fab fa-medium-m"></i></div>
-            <div>
-              <div class="exp-title">Writing articles on Sundays</div>
-              <div class="exp-desc">Articles on technology, data and architecture on Medium.</div>
-            </div>
-            <i class="fas fa-arrow-right exp-arrow"></i>
-          </a>
-
         </div>
 
-        <p class="text-secondary mt-5">If you want to talk with me, <a href="https://twitter.com/nachoad/" target="_blank" rel="noopener" class="link-ia">X</a> is the best way! 😃</p>
+        <div class="col">
+          <a href="https://ialonso.es/experiments/exp/mymap/index.html" class="exp-card-v2">
+            <div class="exp-card-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="exp-card-title">My Map</div>
+            <div class="exp-card-desc">An interactive world map showing all the countries I have visited throughout my life.</div>
+            <div class="exp-card-link">Explore <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="https://ialonso.es/experiments/exp/connected/index.html" class="exp-card-v2">
+            <div class="exp-card-icon"><i class="fas fa-project-diagram"></i></div>
+            <div class="exp-card-title">Connected</div>
+            <div class="exp-card-desc">An interactive network graph that visualizes connections between people and concepts.</div>
+            <div class="exp-card-link">Explore <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="https://ialonso.es/experiments/exp/timeline/index.html" class="exp-card-v2">
+            <div class="exp-card-icon"><i class="fas fa-stream"></i></div>
+            <div class="exp-card-title">Friends timeline</div>
+            <div class="exp-card-desc">A visual timeline showing how friendships and connections have evolved over the years.</div>
+            <div class="exp-card-link">Explore <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="https://ialonso.es/experiments/exp/printer/index.html" class="exp-card-v2">
+            <div class="exp-card-icon"><i class="fas fa-print"></i></div>
+            <div class="exp-card-title">iAlonso Printer</div>
+            <div class="exp-card-desc">A small experiment that plays with printing — one of those side projects you build just because you can.</div>
+            <div class="exp-card-link">Try it <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="https://www.youtube.com/channel/UC59Y86nFk7eg-5Ql4Xi3peQ" target="_blank" rel="noopener" class="exp-card-v2">
+            <div class="exp-card-icon"><i class="fab fa-youtube"></i></div>
+            <div class="exp-card-title">Digital Productivity</div>
+            <div class="exp-card-desc">A YouTube channel about productivity, technology and the tools I use in my day-to-day work.</div>
+            <div class="exp-card-link">Watch <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="https://medium.com/@nachoad/" target="_blank" rel="noopener" class="exp-card-v2">
+            <div class="exp-card-icon"><i class="fab fa-medium-m"></i></div>
+            <div class="exp-card-title">Writing on Sundays</div>
+            <div class="exp-card-desc">Articles on technology, data science, architecture and whatever else keeps me thinking on weekends.</div>
+            <div class="exp-card-link">Read <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
 
       </div>
+
+      <p class="text-secondary mt-5">If you want to talk with me, <a href="https://twitter.com/nachoad/" target="_blank" rel="noopener" class="link-ia">X</a> is the best way! 😃</p>
+
     </div>
   </main>
 
