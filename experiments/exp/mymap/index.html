@@ -10,13 +10,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
-
-  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
   <link rel="stylesheet" href="../../../../css/custom.css">
-
   <style>
     #map {
       width: 100%;
@@ -25,9 +20,7 @@
       border: 1px solid rgba(255,255,255,.08);
       margin-bottom: 2rem;
     }
-    @media (max-width: 576px) {
-      #map { height: 320px; }
-    }
+    @media (max-width: 576px) { #map { height: 320px; } }
   </style>
 </head>
 
@@ -65,41 +58,81 @@
       <h1 class="fw-bold mb-1">My Map</h1>
       <p class="text-secondary mb-4">Last update: <strong>20 Feb 2020</strong></p>
 
-      <!-- Map -->
       <div id="map"></div>
 
-      <!-- Description -->
       <div class="row g-4">
         <div class="col-md-6">
           <p class="text-secondary"><strong class="text-white">EN —</strong> This project came about when I was in Amsterdam. I thought it would be nice to have a map with the cities I've visited in my life. Just take a look at the map above. 👆</p>
-          <p class="text-secondary">The markers show places where I've been at least one night sleeping, and the dates indicate the last time I was there. Made with <a href="http://leafletjs.com/" target="_blank" rel="noopener" class="link-ia">LeafletJS</a> and data from <a href="https://thunderforest.com/" target="_blank" rel="noopener" class="link-ia">Thunderforest</a>.</p>
+          <p class="text-secondary">The markers show places where I've been at least one night sleeping, and the dates indicate the last time I was there. Made with <a href="http://leafletjs.com/" target="_blank" rel="noopener" class="link-ia">LeafletJS</a>.</p>
         </div>
         <div class="col-md-6">
           <p class="text-secondary"><strong class="text-white">ES —</strong> Este proyecto surgió cuando estuve en Amsterdam. Pensé que sería bueno tener un mapa con las ciudades que he visitado a lo largo de mi vida. Echa un vistazo. 👆</p>
-          <p class="text-secondary">Los marcadores muestran sitios donde he dormido una noche o más, y las fechas indican la última vez que estuve en ese lugar. Hecho con <a href="http://leafletjs.com/" target="_blank" rel="noopener" class="link-ia">LeafletJS</a> y datos de <a href="https://thunderforest.com/" target="_blank" rel="noopener" class="link-ia">Thunderforest</a>.</p>
+          <p class="text-secondary">Los marcadores muestran sitios donde he dormido una noche o más, y las fechas indican la última vez que estuve en ese lugar. Hecho con <a href="http://leafletjs.com/" target="_blank" rel="noopener" class="link-ia">LeafletJS</a>.</p>
         </div>
       </div>
 
     </div>
   </main>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/map.js"></script>
   <script>
-    var map = L.map('map', { zoomControl: true }).setView([30, 10], 2);
+    var mymap = L.map('map').setView([40.41678, -3.70379], 3);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 18
-    }).addTo(map);
+      maxZoom: 18,
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
 
-    if (typeof markers !== 'undefined') {
-      markers.forEach(function(m) {
-        L.marker([m.lat, m.lng])
-          .addTo(map)
-          .bindPopup('<strong>' + m.name + '</strong><br>' + (m.date || ''));
-      });
-    }
+    var places = [
+      { lat: 40.41678,   lng: -3.70379,    popup: "<b>Madrid</b><br>I live here! :)" },
+      { lat: 39.46991,   lng: -0.37629,    popup: "<b>Valencia</b><br>On holidays<br><i>I go there often :P</i>" },
+      { lat: 48.85661,   lng: 2.35222,     popup: "<b>Par&iacute;s</b><br>Two times here, just for work.<br><i>Mar - 2013</i>" },
+      { lat: 52.37022,   lng: 4.89517,     popup: "<b>Amsterdam</b><br>One time here, work and holidays.<br><i>May - 2013</i>" },
+      { lat: -33.92487,  lng: 18.42406,    popup: "<b>Cape Town</b><br>Invited by JB brand, due to my blog.<br><i>Jan - 2009</i>" },
+      { lat: 36.81881,   lng: 10.16596,    popup: "<b>Tunisia</b><br>On holidays, at the end of my career.<br><i>Feb - 2010</i>" },
+      { lat: 29.05976,   lng: -13.55976,   popup: "<b>Lanzarote</b><br>On holidays<br><i>Jul - 2013</i>" },
+      { lat: 38.72530,   lng: -9.15004,    popup: "<b>Lisbon</b><br>On holidays<br><i>Aug - 2013</i>" },
+      { lat: 42.24600,   lng: -8.71678,    popup: "<b>Vigo</b><br>On holidays<br><i>2000 - 2013</i>" },
+      { lat: 42.87821,   lng: -8.54484,    popup: "<b>Santiago de Compostela</b><br>On holidays<br><i>2000 - 2013</i>" },
+      { lat: 41.07114,   lng: -2.64348,    popup: "<b>Sig&uuml;enza</b><br>On holidays<br><i>I go there often.</i>" },
+      { lat: 37.63153,   lng: -1.17494,    popup: "<b>Cartagena, Murcia</b><br>On holidays<br><i>Jul - 2013</i>" },
+      { lat: 39.00973,   lng: -0.16558,    popup: "<b>Gand&iacute;a</b><br>On holidays<br><i>I go there often :P</i>" },
+      { lat: 49.00915,   lng: 8.37994,     popup: "<b>Karlsruhe</b><br>On holidays visiting Alberto Mart&iacute;nez<br><i>Dec - 2010</i>" },
+      { lat: 37.17734,   lng: -3.59856,    popup: "<b>Granada</b><br>On holidays<br><i>Dec - 2011</i>" },
+      { lat: 40.07053,   lng: -2.13672,    popup: "<b>Cuenca</b><br>On holidays<br><i>Mar - 2013</i>" },
+      { lat: 51.39558,   lng: -0.70031,    popup: "<b>Ascot, United Kingdom</b><br>Just for work.<br><i>Sep - 2012</i>" },
+      { lat: 41.38506,   lng: 2.17340,     popup: "<b>Barcelona</b><br>Just for work.<br><i>Nov - 2012</i>" },
+      { lat: 43.25669,   lng: -2.92406,    popup: "<b>Bilbao</b><br>Just for work.<br><i>Nov - 2012</i>" },
+      { lat: 43.31833,   lng: -1.98123,    popup: "<b>San Sebastian</b><br>On holidays<br><i>Aug - 2013</i>" },
+      { lat: 39.47529,   lng: -6.37249,    popup: "<b>C&aacute;ceres</b><br>On holidays<br><i>May - 2012</i>" },
+      { lat: 36.83404,   lng: -2.46371,    popup: "<b>Almer&iacute;a</b><br>Just for work.<br><i>May - 2015</i>" },
+      { lat: 36.27807,   lng: -6.08624,    popup: "<b>Conil de la Frontera</b><br>On holidays.<br><i>Jul - 2014</i>" },
+      { lat: 39.86280,   lng: -4.02732,    popup: "<b>Toledo</b><br>On holidays.<br><i>Nov - 2014</i>" },
+      { lat: 37.38900,   lng: -5.98445,    popup: "<b>Sevilla</b><br>On holidays.<br><i>Jun - 2014</i>" },
+      { lat: 28.38523,   lng: -81.56380,   popup: "<b>Walt Disney World Resort, Orlando, FL</b><br>For work.<br><i>Feb - 2014</i>" },
+      { lat: 28.39221,   lng: -80.60770,   popup: "<b>Cape Canaveral, FL</b><br>On holidays visiting Kennedy Space Center.<br><i>Feb - 2014</i>" },
+      { lat: 34.69374,   lng: 135.50217,   popup: "<b>Osaka, Japan</b><br>On holidays.<br><i>Jun - 2017</i>" },
+      { lat: 35.01164,   lng: 135.76803,   popup: "<b>Kyoto, Japan</b><br>On holidays.<br><i>Jun - 2017</i>" },
+      { lat: 35.23236,   lng: 139.10694,   popup: "<b>Hakone, Japan</b><br>On holidays, in a Ryokan<br><i>Jun - 2017</i>" },
+      { lat: 35.68949,   lng: 139.69171,   popup: "<b>Tokyo, Japan</b><br>On holidays.<br><i>Jun - 2017</i>" },
+      { lat: 4.17550,    lng: 73.50935,    popup: "<b>Male, Maldives</b><br>On holidays. A paradise!!!<br><i>Jun - 2017</i>" },
+      { lat: 37.98381,   lng: 23.72754,    popup: "<b>Athens, Greece</b><br>Just for work.<br><i>Jul - 2014</i>" },
+      { lat: 19.54292,   lng: -155.66586,  popup: "<b>Big Island, Hawaii</b><br>On holidays visiting the Volcano!<br><i>May - 2016</i>" },
+      { lat: 20.68285,   lng: -156.44296,  popup: "<b>Maui, Hawaii</b><br>On holidays :)<br><i>May - 2016</i>" },
+      { lat: 50.85034,   lng: 4.35171,     popup: "<b>Brussels, Belgium</b><br>Just for work.<br><i>Jul - 2016</i>" },
+      { lat: 28.41141,   lng: -16.54496,   popup: "<b>Puerto de la Cruz, Spain</b><br>On holidays.<br><i>Mar - 2018</i>" },
+      { lat: 40.66430,   lng: -73.93850,   popup: "<b>New York, USA</b><br>On holidays.<br><i>Aug - 2019</i>" },
+      { lat: 41.90278,   lng: 12.49637,    popup: "<b>Rome, Italy</b><br>On holidays.<br><i>Apr - 2019</i>" },
+      { lat: 48.14860,   lng: 17.10775,    popup: "<b>Bratislava, Slovakia</b><br>On holidays.<br><i>Jun - 2019</i>" },
+      { lat: 48.20818,   lng: 16.37382,    popup: "<b>Vienna, Austria</b><br>On holidays.<br><i>Jun - 2019</i>" },
+      { lat: 38.90884,   lng: 1.43239,     popup: "<b>Ibiza, Spain</b><br>On holidays.<br><i>Sep - 2018</i>" },
+      { lat: 44.43225,   lng: 26.10626,    popup: "<b>Bucharest, Romania</b><br>On holidays.<br><i>Feb - 2020</i>" }
+    ];
+
+    places.forEach(function(p) {
+      L.marker([p.lat, p.lng]).addTo(mymap).bindPopup(p.popup);
+    });
   </script>
 </body>
 </html>
