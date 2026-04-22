@@ -24,6 +24,22 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   line-height: 1.05;
 }
 
+#rotating-word {
+  display: inline-block;
+  transition: opacity .4s ease, transform .4s ease;
+}
+#rotating-word.word-out {
+  opacity: 0;
+  transform: translateY(12px);
+}
+#rotating-word.word-in {
+  animation: word-enter .5s ease forwards;
+}
+@keyframes word-enter {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .photo {
   width: 220px;
   height: 220px;
