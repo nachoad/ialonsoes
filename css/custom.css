@@ -252,6 +252,10 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   background: rgba(74, 222, 128, .15);
   color: #86efac;
 }
+.type-pill.type-opinion {
+  background: rgba(251, 191, 36, .15);
+  color: #fcd34d;
+}
 
 /* Experiment cards */
 .exp-card-v2 {
