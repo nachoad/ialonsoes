@@ -105,6 +105,33 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .nav-link:hover,
 .nav-link.active { color: #fff !important; }
 
+/* Navbar compact avatar + subtitle (shown on scroll, bio page) */
+.navbar-avatar {
+  width: 0;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  margin-right: 0;
+  transition: width .3s ease, opacity .3s ease, margin-right .3s ease;
+}
+.navbar-subtitle {
+  font-size: .8rem;
+  color: rgba(255,255,255,.45);
+  margin-left: .75rem;
+  opacity: 0;
+  transition: opacity .3s ease;
+  white-space: nowrap;
+}
+#mainNavbar.scrolled .navbar-avatar {
+  width: 30px;
+  opacity: 1;
+  margin-right: .55rem;
+}
+#mainNavbar.scrolled .navbar-subtitle {
+  opacity: 1;
+}
+
 /* Section headings (bio) */
 .section-title {
   font-size: 2.2rem;
