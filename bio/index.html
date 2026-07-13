@@ -201,7 +201,7 @@
       <!-- Public Articles -->
       <section class="mb-5">
         <h2 class="section-title">Public articles, presentations, and other stuff</h2>
-        <p class="text-secondary">I used to write articles on Sundays, you can read it on my <a href="https://medium.com/@nachoad" target="_blank" rel="noopener" class="link-ia">Medium account</a>.</p>
+        <p class="text-secondary callout-note mb-3">I used to write articles on Sundays, you can read it on my <a href="https://medium.com/@nachoad" target="_blank" rel="noopener" class="link-ia">Medium account</a>.</p>
         <p class="text-secondary mb-3">More talks and presentations on the table below.</p>
         <div class="table-responsive">
           <table class="table table-dark table-borderless bio-table">
@@ -215,62 +215,62 @@
             <tbody>
               <tr>
                 <td><a href="https://cloud.withgoogle.com/next/25/speakers?session=CT1-30" target="_blank" rel="noopener" class="link-ia">Google Next · From Chaos to Control: The MasOrange story of streamlining to Google Cloud</a></td>
-                <td>Talk at Google Next</td>
+                <td><span class="type-pill type-talk">Talk at Google Next</span></td>
                 <td>April 2025</td>
               </tr>
               <tr>
                 <td><a href="https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-como-ayuda-la-nube-digitalizacion-empresas/" target="_blank" rel="noopener" class="link-ia">Seminario | Cómo ayuda la nube en la digitalización de tu empresa</a></td>
-                <td>Talk at a Seminar</td>
+                <td><span class="type-pill type-talk">Talk at a Seminar</span></td>
                 <td>November 2023</td>
               </tr>
               <tr>
                 <td><a href="https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-la-nube-como-acelerador-digital-de-las-empresas/" target="_blank" rel="noopener" class="link-ia">Seminario | La nube como acelerador digital de la empresa</a></td>
-                <td>Talk at a Seminar</td>
+                <td><span class="type-pill type-talk">Talk at a Seminar</span></td>
                 <td>February 2022</td>
               </tr>
               <tr>
                 <td><a href="https://www.youtube.com/watch?v=gY5YW8w_K8I" target="_blank" rel="noopener" class="link-ia">Natural Language Processing (NLP) for Dummies</a></td>
-                <td>Talk at a Meetup</td>
+                <td><span class="type-pill type-talk">Talk at a Meetup</span></td>
                 <td>June 2018</td>
               </tr>
               <tr>
                 <td><a href="https://www.youtube.com/watch?v=5omSvmhRwV0&list=PLGexnaYV5MSKhxrKluc2c4-XOVl_qNwhW" target="_blank" rel="noopener" class="link-ia">Watson Explorer Community Edition Tutorial</a></td>
-                <td>Youtube video playlist</td>
+                <td><span class="type-pill type-video">Youtube video playlist</span></td>
                 <td>March 2018</td>
               </tr>
               <tr>
                 <td><a href="https://www.youtube.com/watch?v=3JCt-NgqYi8&t=1s" target="_blank" rel="noopener" class="link-ia">Data Science Experience + Watson Machine Learning</a></td>
-                <td>Video</td>
+                <td><span class="type-pill type-video">Video</span></td>
                 <td>December 2017</td>
               </tr>
               <tr>
                 <td><a href="https://retina.elpais.com/retina/2017/05/30/tendencias/1496154380_977310.html" target="_blank" rel="noopener" class="link-ia">El País: El 'big data' ayuda a tomar decisiones, pero lo importante es la intuición</a></td>
-                <td>Collaboration on the article</td>
+                <td><span class="type-pill type-article">Collaboration on the article</span></td>
                 <td>June 2017</td>
               </tr>
               <tr>
                 <td><a href="http://www.silicon.es/a-fondo-acabara-inteligencia-artificial-data-scientist-2340008" target="_blank" rel="noopener" class="link-ia">Silicon: A fondo: ¿Acabará la inteligencia artificial con el data scientist?</a></td>
-                <td>Collaboration on the article</td>
+                <td><span class="type-pill type-article">Collaboration on the article</span></td>
                 <td>May 2017</td>
               </tr>
               <tr>
                 <td><a href="https://www.youtube.com/watch?v=PpNb1sHF2hA" target="_blank" rel="noopener" class="link-ia">¿Qué es un científico de datos?</a></td>
-                <td>Video</td>
+                <td><span class="type-pill type-video">Video</span></td>
                 <td>March 2017</td>
               </tr>
               <tr>
                 <td><a href="https://www.youtube.com/watch?v=6UcO8HpKduc" target="_blank" rel="noopener" class="link-ia">Data Science Experience (DSX) + Spark SQL Intro</a></td>
-                <td>Video</td>
+                <td><span class="type-pill type-video">Video</span></td>
                 <td>December 2016</td>
               </tr>
               <tr>
                 <td><a href="https://www.youtube.com/watch?v=VasEE2cw2Bg" target="_blank" rel="noopener" class="link-ia">IBM Business Connect 2016 - Data Science Experience</a></td>
-                <td>Talk</td>
+                <td><span class="type-pill type-talk">Talk</span></td>
                 <td>November 2016</td>
               </tr>
               <tr>
                 <td><a href="https://www.ibm.com/blogs/think/es-es/2014/11/04/las-redes-sociales-estas-dentro-o-no/" target="_blank" rel="noopener" class="link-ia">Las Redes Sociales: ¿estás dentro o no?</a></td>
-                <td>IBM Blog article</td>
+                <td><span class="type-pill type-article">IBM Blog article</span></td>
                 <td>November 2014</td>
               </tr>
             </tbody>
@@ -332,7 +332,10 @@
         titleTd.appendChild(link);
 
         const typeTd = document.createElement('td');
-        typeTd.textContent = 'Medium article';
+        const typePill = document.createElement('span');
+        typePill.className = 'type-pill type-article';
+        typePill.textContent = 'Medium article';
+        typeTd.appendChild(typePill);
 
         const dateTd = document.createElement('td');
         dateTd.textContent = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });

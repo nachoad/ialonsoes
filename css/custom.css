@@ -110,6 +110,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   font-size: 2.2rem;
   font-weight: 700;
   color: #e8e8e8;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
@@ -145,6 +146,23 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   margin: 0 auto;
 }
 
+/* Callout note */
+.callout-note {
+  background: rgba(245, 200, 66, .12);
+  border-left: 3px solid var(--yellow);
+  border-radius: 8px;
+  padding: .85rem 1.1rem;
+  color: #e8e8e8 !important;
+}
+.callout-note .link-ia {
+  color: var(--yellow);
+  text-decoration-color: rgba(245, 200, 66, .5);
+}
+.callout-note .link-ia:hover {
+  color: #fff;
+  text-decoration-color: rgba(255,255,255,.6);
+}
+
 /* Articles table */
 .bio-table {
   background-color: #111318;
@@ -152,17 +170,43 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   --bs-table-color: #cdcdcd;
 }
 .bio-table thead th {
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.65);
   letter-spacing: .06em;
   text-transform: uppercase;
+  background: rgba(255,255,255,.08);
   border-bottom: 1px solid rgba(255,255,255,.1) !important;
-  padding-bottom: .6rem;
+  padding: .6rem .5rem;
 }
+.bio-table thead th:first-child { border-top-left-radius: 8px; }
+.bio-table thead th:last-child { border-top-right-radius: 8px; }
 .bio-table td {
   color: #cdcdcd;
   vertical-align: middle;
   border-bottom: 1px solid rgba(255,255,255,.05) !important;
   padding: .65rem .5rem;
+}
+
+/* Type pills */
+.type-pill {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  border-radius: 20px;
+  padding: .25rem .75rem;
+}
+.type-pill.type-talk {
+  background: rgba(96, 165, 250, .15);
+  color: #93c5fd;
+}
+.type-pill.type-video {
+  background: rgba(192, 132, 252, .15);
+  color: #d8b4fe;
+}
+.type-pill.type-article {
+  background: rgba(74, 222, 128, .15);
+  color: #86efac;
 }
 
 /* Experiment cards */
