@@ -308,6 +308,69 @@
       telcoYears === 1 ? 'one year' : telcoYears + ' years';
   </script>
 
+  <script>
+    // Pull Medium articles into the bio table (rss2json proxies Medium's RSS feed, which has no CORS support)
+    (function () {
+      const MEDIUM_FEED_API =
+        'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nachoad';
+
+      function parseTableDate(text) {
+        const parsed = new Date(text + ' 1');
+        return isNaN(parsed) ? new Date(0) : parsed;
+      }
+
+      function buildRow(title, url, date) {
+        const tr = document.createElement('tr');
+
+        const titleTd = document.createElement('td');
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.className = 'link-ia';
+        link.textContent = title;
+        titleTd.appendChild(link);
+
+        const typeTd = document.createElement('td');
+        typeTd.textContent = 'Medium article';
+
+        const dateTd = document.createElement('td');
+        dateTd.textContent = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+        tr.append(titleTd, typeTd, dateTd);
+        tr._sortDate = date;
+        return tr;
+      }
+
+      fetch(MEDIUM_FEED_API)
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data || data.status !== 'ok' || !Array.isArray(data.items)) return;
+
+          const tbody = document.querySelector('.bio-table tbody');
+          if (!tbody) return;
+
+          const existingRows = Array.from(tbody.querySelectorAll('tr')).map(function (tr) {
+            tr._sortDate = parseTableDate(tr.children[2].textContent.trim());
+            return tr;
+          });
+
+          const mediumRows = data.items.map(function (item) {
+            return buildRow(item.title, item.link, new Date(item.pubDate));
+          });
+
+          const allRows = existingRows.concat(mediumRows).sort(function (a, b) {
+            return b._sortDate - a._sortDate;
+          });
+
+          tbody.replaceChildren.apply(tbody, allRows);
+        })
+        .catch(function () {
+          // Medium feed unavailable: keep the static rows as-is
+        });
+    })();
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
