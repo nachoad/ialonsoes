@@ -194,6 +194,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   background-color: #111318;
   --bs-table-bg: #111318;
   --bs-table-color: #cdcdcd;
+  table-layout: fixed;
 }
 .bio-table thead th {
   color: rgba(255,255,255,.65);
@@ -205,11 +206,37 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 }
 .bio-table thead th:first-child { border-top-left-radius: 8px; }
 .bio-table thead th:last-child { border-top-right-radius: 8px; }
+.bio-table th:nth-child(1), .bio-table td:nth-child(1) { width: 55%; }
+.bio-table th:nth-child(2), .bio-table td:nth-child(2) { width: 25%; }
+.bio-table th:nth-child(3), .bio-table td:nth-child(3) { width: 20%; }
 .bio-table td {
   color: #cdcdcd;
   vertical-align: middle;
   border-bottom: 1px solid rgba(255,255,255,.05) !important;
   padding: .65rem .5rem;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 576px) {
+  .bio-table { font-size: .82rem; }
+  .bio-table th:nth-child(1), .bio-table td:nth-child(1) { width: 50%; }
+  .bio-table th:nth-child(2), .bio-table td:nth-child(2) { width: 28%; }
+  .bio-table th:nth-child(3), .bio-table td:nth-child(3) { width: 22%; }
+  .bio-table thead th,
+  .bio-table td {
+    padding: .45rem .3rem;
+  }
+  .bio-table thead th { font-size: .68rem; }
+  .type-pill {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: .68rem;
+    white-space: normal;
+    word-break: break-word;
+    padding: .2rem .5rem;
+    line-height: 1.25;
+  }
 }
 
 /* Type pills */
