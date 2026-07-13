@@ -149,7 +149,6 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 /* Callout note */
 .callout-note {
   background: rgba(245, 200, 66, .12);
-  border-left: 3px solid var(--yellow);
   border-radius: 8px;
   padding: .85rem 1.1rem;
   color: #e8e8e8 !important;
@@ -203,6 +202,10 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .type-pill.type-video {
   background: rgba(192, 132, 252, .15);
   color: #d8b4fe;
+}
+.type-pill.type-youtube {
+  background: rgba(248, 113, 113, .15);
+  color: #fca5a5;
 }
 .type-pill.type-article {
   background: rgba(74, 222, 128, .15);
