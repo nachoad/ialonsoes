@@ -141,6 +141,14 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   margin-bottom: 1rem;
 }
 
+.subsection-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e8e8e8;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
 /* Inline links */
 .link-ia {
   color: rgba(255,255,255,.75);

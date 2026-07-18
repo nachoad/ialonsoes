@@ -64,11 +64,19 @@
       <!-- My Career -->
       <section class="mb-5">
         <h2 class="section-title">My career</h2>
-        <p class="text-secondary">I'm a Chief Enterprise Architect at Kyndryl. I've been here for over a decade — first at IBM, then at Kyndryl following the spin-off <span id="years-kyndryl"></span> ago. For the past <span id="years-telco"></span>, I've led a team of specialists serving a major international telecom. We design and deliver large-scale, resilient infrastructure. My job is simple to describe: I turn business problems into technology solutions.</p>
+        <h3 class="subsection-title">Who I am</h3>
+        <p class="text-secondary">I'm a Chief Enterprise Architect at Kyndryl. I've been here for over a decade — first at IBM, then at Kyndryl after the 2021 spin-off.</p>
+        <h3 class="subsection-title">What I do</h3>
+        <p class="text-secondary">For the past <span id="years-telco"></span>, I've led a team of specialists serving a major international telecom. We design and deliver large-scale, resilient infrastructure. My job is simple to describe: I turn business problems into technology solutions.</p>
+        <h3 class="subsection-title">How I do it</h3>
         <p class="text-secondary">I cover the full stack: compute, network, storage, security, and cyber resiliency. In practice, that means reducing legacy debt, migrating to the cloud, keeping services running even when a full data center goes down, and building automation that scales with demand. I also design GPU platforms to support AI workloads — infrastructure built to run large language models at scale.</p>
+        <h3 class="subsection-title">What I've achieved</h3>
         <p class="text-secondary">My biggest technical achievement so far? Designing and deploying a private cloud built on Red Hat technologies. I've also architected workload mobility strategies across clouds — moving the right workloads to the right place to cut technical debt and reduce costs. Beyond that, I design hybrid and multi-cloud environments spanning GCP, AWS, and OCI.</p>
+        <h3 class="subsection-title">How I think</h3>
         <p class="text-secondary">Every technical decision goes through the same filter: Will it scale? Does it integrate? Can we automate it? What happens when it fails? That mindset is what makes solutions last.</p>
+        <h3 class="subsection-title">Where I come from</h3>
         <p class="text-secondary">Before infrastructure, I worked in business intelligence, big data and NLP — building chatbots, training ML models and processing unstructured data with IBM Watson.</p>
+        <h3 class="subsection-title">Beyond my day job</h3>
         <p class="text-secondary">I teach cloud computing, big data, analytics and NLP in several Master's programs. I'm also a member of the <a href="https://www.globalaea.org/members/group.aspx?id=110572" target="_blank" rel="noopener" class="link-ia">Association of Enterprise Architects</a> (Spain chapter) and one of the organizers of <a href="https://www.meetup.com/es/Big-Data-Developers-in-Madrid/" target="_blank" rel="noopener" class="link-ia">Big Data Developers in Madrid</a> — a community of over 4,250 members.</p>
         <p class="text-secondary">Find me on <a href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener" class="link-ia">LinkedIn</a>.</p>
       </section>
@@ -293,26 +301,17 @@
     </div>
   </main>
 
+
   <script>
-    function yearsSince(fromYear, fromMonth) {
-      const now = new Date();
-      const months = (now.getFullYear() - fromYear) * 12 + (now.getMonth() + 1 - fromMonth);
-      const years = Math.floor(months / 12);
-      return years;
-    }
-
-    // Kyndryl spin-off: September 2021
-    const kyndrylYears = yearsSince(2021, 9);
-    document.getElementById('years-kyndryl').textContent =
-      kyndrylYears === 1 ? 'one year' : kyndrylYears + ' years';
-
     // Telco client: July 2018
-    const telcoYears = yearsSince(2018, 7);
-    document.getElementById('years-telco').textContent =
-      telcoYears === 1 ? 'one year' : telcoYears + ' years';
-  </script>
+    (function () {
+      const now = new Date();
+      const months = (now.getFullYear() - 2018) * 12 + (now.getMonth() + 1 - 7);
+      const years = Math.floor(months / 12);
+      document.getElementById('years-telco').textContent =
+        years === 1 ? 'one year' : years + ' years';
+    })();
 
-  <script>
     // Show the compact avatar + subtitle in the navbar once the page header scrolls out of view
     (function () {
       const navbar = document.getElementById('mainNavbar');
