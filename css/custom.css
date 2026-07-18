@@ -147,6 +147,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   color: #e8e8e8;
   margin-top: 1.75rem;
   margin-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 /* Inline links */
