@@ -142,12 +142,18 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 }
 
 .subsection-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #e8e8e8;
-  margin-top: 1.75rem;
-  margin-bottom: 0.5rem;
-  margin-left: 1rem;
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--yellow);
+  margin-top: 2rem;
+  margin-bottom: .6rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--yellow);
+}
+.subsection-title + p.text-secondary {
+  padding-left: calc(1rem + 3px);
 }
 
 /* Inline links */
