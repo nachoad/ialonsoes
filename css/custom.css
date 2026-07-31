@@ -199,19 +199,34 @@ section[id] { scroll-margin-top: 90px; }
   margin-bottom: 1rem;
 }
 
-.subsection-title {
-  font-size: .85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--yellow);
-  margin-top: 2rem;
-  margin-bottom: .6rem;
-  padding-left: 1rem;
-  border-left: 3px solid var(--yellow);
+/* Career blocks: label on the left, prose on the right, separated by hairlines */
+.bio-block {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0 2.5rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid rgba(255,255,255,.08);
 }
-.subsection-title + p.text-secondary {
-  padding-left: calc(1rem + 3px);
+.bio-block:first-of-type {
+  border-top: none;
+  padding-top: .4rem;
+}
+.bio-block-label {
+  font-size: .78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: rgba(255,255,255,.42);
+  margin: .3rem 0 0;
+}
+.bio-block-body p:last-child { margin-bottom: 0; }
+
+@media (max-width: 767.98px) {
+  .bio-block {
+    grid-template-columns: 1fr;
+    gap: .55rem;
+    padding: 1.3rem 0;
+  }
 }
 
 /* Inline links */
