@@ -26,9 +26,13 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-md fixed-top">
+  <nav class="navbar navbar-expand-md fixed-top" id="mainNavbar">
     <div class="container">
-      <a class="navbar-brand" href="/">ialonso.es</a>
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="https://ialonso.es/img/nyc.png" alt="Ignacio Alonso" class="navbar-avatar">
+        <span>Ignacio Alonso</span>
+      </a>
+      <span class="navbar-subtitle d-none d-sm-inline">IT Enterprise Architect · Associate Professor</span>
       <button class="navbar-toggler border-0" type="button"
               data-bs-toggle="collapse" data-bs-target="#navMenu"
               aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +54,7 @@
   <main class="container mt-5 pt-4 pb-5">
     <div class="col-lg-10 col-md-11 mx-auto">
 
-      <h1 class="fw-bold mb-2">Experiments</h1>
+      <h1 class="fw-bold mb-2" id="pageHeader">Experiments</h1>
       <p class="text-secondary mb-5">Here you can find some of the public experiments I put together whenever I manage to carve out a bit of time. Some of them are a few years old, others are more recent — all of them were fun to build. Feel free to explore, and if you have any questions, <a href="https://twitter.com/nachoad" target="_blank" rel="noopener" class="link-ia">X</a> is the best way to reach me.</p>
 
       <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -125,6 +129,7 @@
     </div>
   </main>
 
+  <script src="/js/navbar-scroll.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

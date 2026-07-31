@@ -30,7 +30,7 @@
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/">
         <img src="https://ialonso.es/img/nyc.png" alt="Ignacio Alonso" class="navbar-avatar">
-        <span>ialonso.es</span>
+        <span>Ignacio Alonso</span>
       </a>
       <span class="navbar-subtitle d-none d-sm-inline">IT Enterprise Architect · Associate Professor</span>
       <button class="navbar-toggler border-0" type="button"
@@ -324,20 +324,9 @@
       document.getElementById('years-telco').textContent =
         years === 1 ? 'one year' : years + ' years';
     })();
-
-    // Show the compact avatar + subtitle in the navbar once the page header scrolls out of view
-    (function () {
-      const navbar = document.getElementById('mainNavbar');
-      const header = document.getElementById('pageHeader');
-      if (!navbar || !header) return;
-
-      const observer = new IntersectionObserver(function (entries) {
-        navbar.classList.toggle('scrolled', !entries[0].isIntersecting);
-      }, { rootMargin: '-72px 0px 0px 0px' });
-
-      observer.observe(header);
-    })();
   </script>
+
+  <script src="/js/navbar-scroll.js"></script>
 
   <script>
     // Pull Medium articles into the bio table (rss2json proxies Medium's RSS feed, which has no CORS support)

@@ -148,7 +148,7 @@ section[id] { scroll-margin-top: 90px; }
 .nav-link:hover,
 .nav-link.active { color: #fff !important; }
 
-/* Navbar compact avatar + subtitle (shown on scroll, bio page) */
+/* Navbar compact avatar + subtitle (shown on scroll, see js/navbar-scroll.js) */
 .navbar-avatar {
   width: 0;
   height: 30px;
