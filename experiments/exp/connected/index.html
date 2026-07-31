@@ -11,6 +11,7 @@
   gtag('config', 'G-HH1TN65YEW');
 </script>
   <meta charset="UTF-8">
+  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-bs-theme','light')}catch(e){}</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ignacio Alonso · Connected</title>
   <meta name="description" content="Connected — a Twitter network graph experiment by Ignacio Alonso Delgado.">
@@ -44,6 +45,11 @@
           <li class="nav-item"><a class="nav-link" href="https://medium.com/@nachoad" target="_blank" rel="noopener">Notes</a></li>
           <li class="nav-item"><a class="nav-link" href="https://twitter.com/nachoad" target="_blank" rel="noopener">X</a></li>
           <li class="nav-item"><a class="nav-link" href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li class="nav-item d-flex align-items-center ms-1">
+            <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+              <i class="fa-regular fa-sun icon-sun"></i><i class="fa-regular fa-moon icon-moon"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -66,18 +72,19 @@
       <img src="img/connected_750x750.png"
            alt="Connected — Twitter network graph"
            class="img-fluid rounded mb-4"
-           style="border: 1px solid rgba(255,255,255,.08);">
+           style="border: 1px solid rgba(var(--ink-rgb),.08);">
 
       <p class="text-secondary">La idea principal era comprobar si se podían obtener grupos claros en mi red de Twitter.</p>
       <p class="text-secondary">Para ello hice un script capaz de obtener los seguidores que tengo. A partir de ahí, busqué los seguidores de ellos. Es decir un segundo grado.</p>
       <p class="text-secondary">Al hacer las búsquedas vía API de Twitter, tenía la limitación de 15 llamadas por cada 15 minutos. La descarga de los datos la programé en Python. El programa se ejecutó en una Raspberry PI durante un par de días, aprovechando esas ventanas de 15 min.</p>
       <p class="text-secondary">Una vez tenía los datos usé algunos algoritmos para poder separar mejor los nodos y comprender los grupos que se formaban porque eran seguidores entre ellos.</p>
-      <p class="text-secondary">En <strong class="text-white">azul</strong> se ve claramente a todo el grupo con relación a IBM. En <strong class="text-white">morado</strong> toda la gente que he seguido desde que tenía el blog (ya no es mío) de Soygik.com (blog con más de 10k visitas diarias) y que he conocido por Twitter o en congresos/eventos. En <strong class="text-white">verde</strong> una cuenta que sigue a un montón de personas. Y entre medias, en <strong class="text-white">gris</strong> periódicos online, o cuentas relacionadas con tecnología (como Mashable, NASA, GitHub, Tim Cook...).</p>
+      <p class="text-secondary">En <strong class="text-emphasis">azul</strong> se ve claramente a todo el grupo con relación a IBM. En <strong class="text-emphasis">morado</strong> toda la gente que he seguido desde que tenía el blog (ya no es mío) de Soygik.com (blog con más de 10k visitas diarias) y que he conocido por Twitter o en congresos/eventos. En <strong class="text-emphasis">verde</strong> una cuenta que sigue a un montón de personas. Y entre medias, en <strong class="text-emphasis">gris</strong> periódicos online, o cuentas relacionadas con tecnología (como Mashable, NASA, GitHub, Tim Cook...).</p>
 
     </div>
   </main>
 
   <script src="/js/navbar-scroll.js"></script>
+  <script src="/js/theme.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

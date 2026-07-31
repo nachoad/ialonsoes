@@ -12,6 +12,7 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-bs-theme','light')}catch(e){}</script>
   <title>Ignacio Alonso | IT Enterprise Architect & Associate Professor</title>
   <meta name="description" content="Ignacio Alonso Delgado is an IT Enterprise Architect and Associate Professor focused on cloud architecture, digital transformation, and resilient infrastructure.">
   <meta name="keywords" content="Ignacio Alonso, enterprise architect, cloud computing, IT architecture, associate professor, digital transformation, infrastructure automation">
@@ -38,6 +39,10 @@
 </head>
 
 <body>
+  <button class="theme-toggle theme-toggle-float" type="button" aria-label="Toggle light/dark theme">
+    <i class="fa-regular fa-sun icon-sun"></i><i class="fa-regular fa-moon icon-moon"></i>
+  </button>
+
   <main class="container mt-5 pt-3 pb-5">
 
     <div class="mb-4">
@@ -78,5 +83,6 @@
       }, 400);
     }, 2800);
   </script>
+  <script src="js/theme.js" defer></script>
 </body>
 </html>

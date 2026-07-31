@@ -11,6 +11,7 @@
   gtag('config', 'G-HH1TN65YEW');
 </script>
   <meta charset="UTF-8">
+  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-bs-theme','light')}catch(e){}</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ignacio Alonso · Bio</title>
   <meta name="description" content="Bio and career of Ignacio Alonso Delgado. IT Enterprise Architect at Kyndryl. Associate Professor.">
@@ -45,6 +46,11 @@
           <li class="nav-item"><a class="nav-link" href="https://medium.com/@nachoad" target="_blank" rel="noopener">Notes</a></li>
           <li class="nav-item"><a class="nav-link" href="https://twitter.com/nachoad" target="_blank" rel="noopener">X</a></li>
           <li class="nav-item"><a class="nav-link" href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li class="nav-item d-flex align-items-center ms-1">
+            <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+              <i class="fa-regular fa-sun icon-sun"></i><i class="fa-regular fa-moon icon-moon"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -340,7 +346,7 @@
       <p class="mb-5">Come on! Now that you know everything about me, let's contact by <a href="https://twitter.com/nachoad" target="_blank" rel="noopener" class="link-ia">X</a>, and talk about you! 😃</p>
 
       <!-- Footnote -->
-      <p class="text-secondary" style="border-top:1px solid rgba(255,255,255,.07); padding-top:1rem;">
+      <p class="text-secondary" style="border-top:1px solid rgba(var(--ink-rgb),.07); padding-top:1rem;">
         <sup>*</sup>"Enterprise Architecture (EA) is the practice of analyzing, designing, planning and implementing solutions to satisfy business strategies." — OpenGroup
       </p>
 
@@ -360,6 +366,7 @@
   </script>
 
   <script src="/js/navbar-scroll.js"></script>
+  <script src="/js/theme.js" defer></script>
 
   <script>
     // Pull Medium articles into the bio table (rss2json proxies Medium's RSS feed, which has no CORS support)
