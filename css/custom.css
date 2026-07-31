@@ -234,6 +234,46 @@ section[id] { scroll-margin-top: 90px; }
   white-space: nowrap;
 }
 
+/* Universities / schools pills */
+.uni-cloud { display: flex; flex-wrap: wrap; gap: .5rem; }
+.uni-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .9rem;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: .4rem .85rem;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--uni) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--uni) 34%, transparent);
+  color: color-mix(in srgb, var(--uni) 65%, #fff);
+  transition: background .2s, border-color .2s, color .2s, transform .1s;
+}
+.uni-pill:hover {
+  background: color-mix(in srgb, var(--uni) 28%, transparent);
+  border-color: color-mix(in srgb, var(--uni) 55%, transparent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.uni-pill span {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: .1rem .4rem;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--uni) 25%, transparent);
+}
+
+.uni-rose   { --uni: #e0797f; }
+.uni-green  { --uni: #7fc08d; }
+.uni-amber  { --uni: #e0b062; }
+.uni-blue   { --uni: #6fa8dc; }
+.uni-purple { --uni: #b18ce0; }
+.uni-teal   { --uni: #63c2bd; }
+.uni-orange { --uni: #e29a6b; }
+.uni-indigo { --uni: #8f9be0; }
+
 /* Certification badges */
 .cert-badge img {
   width: 110px;
