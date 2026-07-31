@@ -75,6 +75,7 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   font-weight: 600;
   color: #111;
   background: #efefef;
+  border: 1px solid transparent;
   border-radius: 6px;
   padding: .6rem 1.3rem;
   text-decoration: none;
@@ -96,7 +97,21 @@ h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .btn-linkedin:hover {
   background: #0a66c2;
 }
-.btn-linkedin i {
+.btn-x,
+.btn-x:hover {
+  color: #fff;
+}
+.btn-x {
+  background: #1c1f26;
+  border: 1px solid rgba(255,255,255,.18);
+}
+.btn-x:hover {
+  background: #000;
+  border-color: rgba(255,255,255,.35);
+}
+
+.btn-linkedin i,
+.btn-x i {
   margin-right: .45rem;
 }
 
