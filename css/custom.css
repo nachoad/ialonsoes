@@ -312,6 +312,11 @@ section[id] { scroll-margin-top: 90px; }
   border-radius: 20px;
   padding: .28rem .8rem;
   white-space: nowrap;
+  transition: background .25s, color .25s;
+}
+.skill-tag:hover {
+  background: linear-gradient(90deg, #6fa8dc, #7fc08d);
+  color: #14251c;
 }
 
 /* Universities / schools pills */
