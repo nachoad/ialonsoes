@@ -312,7 +312,7 @@ section[id] { scroll-margin-top: 90px; }
   border-radius: 20px;
   padding: .28rem .8rem;
   white-space: nowrap;
-  transition: background .25s, color .25s;
+  transition: background 1.2s, color 1.2s;
 }
 .skill-tag:hover {
   background: linear-gradient(90deg, #6fa8dc, #7fc08d);
