@@ -509,12 +509,12 @@ section[id] { scroll-margin-top: 90px; }
 
 /* Inline highlight for the current-project sentence */
 .hl-project {
-  background-color: #4a3d00;
+  background-color: #3a3a3a;
   color: #fff;
   padding: .1em .3em;
   border-radius: .2em;
 }
 [data-bs-theme="light"] .hl-project {
-  background-color: #ececec;
+  background-color: #fdf4c9;
   color: inherit;
 }
