@@ -506,3 +506,15 @@ section[id] { scroll-margin-top: 90px; }
 }
 .exp-card-link i { font-size: .7rem; transition: transform .2s; }
 .exp-card-v2:hover .exp-card-link i { transform: translateX(4px); }
+
+/* Inline highlight for the current-project sentence */
+.hl-project {
+  background-color: #4a3d00;
+  color: #fff;
+  padding: .1em .3em;
+  border-radius: .2em;
+}
+[data-bs-theme="light"] .hl-project {
+  background-color: #ececec;
+  color: inherit;
+}
