@@ -435,33 +435,18 @@ section[id] { scroll-margin-top: 90px; }
   border-radius: 20px;
   padding: .25rem .75rem;
 }
-.type-pill.type-talk {
-  background: rgba(96, 165, 250, .15);
-  color: #93c5fd;
-}
-.type-pill.type-video {
-  background: rgba(192, 132, 252, .15);
-  color: #d8b4fe;
-}
-.type-pill.type-youtube {
-  background: rgba(248, 113, 113, .15);
-  color: #fca5a5;
-}
-.type-pill.type-article {
-  background: rgba(74, 222, 128, .15);
-  color: #86efac;
-}
-.type-pill.type-opinion {
-  background: rgba(251, 191, 36, .15);
-  color: #fcd34d;
-}
+.type-pill.cat-cloud   { background: rgba(96, 165, 250, .15);  color: #93c5fd; }
+.type-pill.cat-ai      { background: rgba(192, 132, 252, .15); color: #d8b4fe; }
+.type-pill.cat-data    { background: rgba(74, 222, 128, .15);  color: #86efac; }
+.type-pill.cat-careers { background: rgba(251, 191, 36, .15);  color: #fcd34d; }
+.type-pill.cat-social  { background: rgba(248, 113, 113, .15); color: #fca5a5; }
 
 /* The pastel pill text needs darker variants on a light background */
-[data-bs-theme="light"] .type-pill.type-talk    { color: #1d4ed8; }
-[data-bs-theme="light"] .type-pill.type-video   { color: #7e22ce; }
-[data-bs-theme="light"] .type-pill.type-youtube { color: #b91c1c; }
-[data-bs-theme="light"] .type-pill.type-article { color: #15803d; }
-[data-bs-theme="light"] .type-pill.type-opinion { color: #b45309; }
+[data-bs-theme="light"] .type-pill.cat-cloud   { color: #1d4ed8; }
+[data-bs-theme="light"] .type-pill.cat-ai      { color: #7e22ce; }
+[data-bs-theme="light"] .type-pill.cat-data    { color: #15803d; }
+[data-bs-theme="light"] .type-pill.cat-careers { color: #b45309; }
+[data-bs-theme="light"] .type-pill.cat-social  { color: #b91c1c; }
 
 /* Experiment cards */
 .exp-card-v2 {
@@ -533,21 +518,28 @@ a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-size: .78rem;
   font-weight: 600;
   letter-spacing: .04em;
-  color: rgba(var(--ink-rgb), .7);
-  background: rgba(var(--ink-rgb), .06);
-  border: 1px solid rgba(var(--ink-rgb), .09);
+  color: var(--f-fg);
+  background: var(--f-tint);
+  border: 1px solid transparent;
   border-radius: 20px;
   padding: .3rem .85rem;
   cursor: pointer;
   transition: color .2s, background .2s, border-color .2s;
 }
-.notes-filter-btn:hover,
+.notes-filter-btn:hover { border-color: var(--f-solid); }
 .notes-filter-btn.active {
   color: #111;
-  background: var(--yellow);
-  border-color: var(--yellow);
+  background: var(--f-solid);
+  border-color: var(--f-solid);
 }
-.notes-filter-year { margin-top: -.9rem; }
+/* Filter colors: categories yellow, years blue, sources green (solid = active, tint = options) */
+#notesFilter   { --f-solid: var(--yellow); --f-tint: rgba(245, 200, 66, .16); --f-fg: #fde68a; }
+#yearFilter    { --f-solid: #60a5fa;       --f-tint: rgba(96, 165, 250, .16); --f-fg: #bfdbfe; }
+#sourceFilter  { --f-solid: #4ade80;       --f-tint: rgba(74, 222, 128, .16); --f-fg: #bbf7d0; }
+[data-bs-theme="light"] #notesFilter  { --f-fg: #8a6d10; }
+[data-bs-theme="light"] #yearFilter   { --f-fg: #1d4ed8; }
+[data-bs-theme="light"] #sourceFilter { --f-fg: #15803d; }
+.notes-filter-year, .notes-filter-source { margin-top: -.9rem; }
 .notes-count { opacity: .6; margin-left: .15rem; }
 .note-card {
   background: rgba(var(--ink-rgb), .05);

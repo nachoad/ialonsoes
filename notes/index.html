@@ -72,6 +72,9 @@
       <!-- Year filter -->
       <div class="notes-filter notes-filter-year" id="yearFilter" role="group" aria-label="Filter by year"></div>
 
+      <!-- Source filter -->
+      <div class="notes-filter notes-filter-source" id="sourceFilter" role="group" aria-label="Filter by source"></div>
+
       <!-- Entries -->
       <div id="notesList"></div>
       <p class="text-secondary" id="notesEmpty" hidden>Nothing here yet.</p>
@@ -84,6 +87,7 @@
 
   <script>
     (function () {
+      // category: css class
       var CATEGORIES = [
         'Cloud & Architecture',
         'AI & Agents',
@@ -91,21 +95,29 @@
         'Careers & Roles',
         'Social Media'
       ];
+      var CAT_CLASS = {
+        'Cloud & Architecture': 'cat-cloud',
+        'AI & Agents': 'cat-ai',
+        'Data Science & Big Data': 'cat-data',
+        'Careers & Roles': 'cat-careers',
+        'Social Media': 'cat-social'
+      };
 
       var EXCERPT_WORDS = 40;
 
-      // type: [css class, label]
+      // source labels
       var T = {
-        googleNext: ['type-talk', 'Talk at Google Next'],
-        seminar:    ['type-talk', 'Talk at a Seminar'],
-        meetup:     ['type-talk', 'Talk at a Meetup'],
-        talk:       ['type-talk', 'Talk'],
-        playlist:   ['type-youtube', 'Youtube video playlist'],
-        video:      ['type-video', 'Video'],
-        opinion:    ['type-opinion', 'Expert opinion'],
-        ibm:        ['type-article', 'IBM Blog article'],
-        medium:     ['type-article', 'Medium article']
+        googleNext: 'Talk at Google Next',
+        seminar:    'Talk at a Seminar',
+        meetup:     'Talk at a Meetup',
+        talk:       'Talk',
+        playlist:   'Youtube video playlist',
+        video:      'Video',
+        opinion:    'Expert opinion',
+        ibm:        'IBM Blog article',
+        medium:     'Medium article'
       };
+      var SOURCES = Object.keys(T).map(function (k) { return T[k]; });
 
       var ENTRIES = [
         { title: 'Google Next · From Chaos to Control: The MasOrange story of streamlining to Google Cloud',
@@ -178,6 +190,8 @@
       var emptyMsg = document.getElementById('notesEmpty');
       var entries = ENTRIES.map(function (e) { e.date = new Date(e.date + 'T00:00:00'); return e; });
       var current = 'All';
+      var currentSource = 'All';
+      var sourceBar = document.getElementById('sourceFilter');
       var thisYear = new Date().getFullYear();
       var yearOnly = false;
       var yearBar = document.getElementById('yearFilter');
@@ -193,10 +207,11 @@
         var art = el('article', 'note-card');
         art.dataset.category = e.category;
         art.dataset.year = e.date.getFullYear();
+        art.dataset.source = e.type;
 
         var meta = el('div', 'note-meta');
-        meta.appendChild(el('span', 'type-pill ' + e.type[0], e.type[1]));
-        meta.appendChild(el('span', 'note-cat', e.category));
+        meta.appendChild(el('span', 'type-pill ' + CAT_CLASS[e.category], e.category));
+        meta.appendChild(el('span', 'note-cat', e.type));
         var when = e.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
         meta.appendChild(el('span', 'note-date-mobile', when));
 
@@ -216,75 +231,83 @@
       }
 
       function inYear(e) { return !yearOnly || e.date.getFullYear() === thisYear; }
+      function inCat(e) { return current === 'All' || e.category === current; }
+      function inSource(e) { return currentSource === 'All' || e.type === currentSource; }
 
-      function renderYearFilter() {
-        yearBar.replaceChildren();
-        [[false, 'All years'], [true, 'This year (' + thisYear + ')']].forEach(function (o) {
-          var b = el('button', 'notes-filter-btn' + (o[0] === yearOnly ? ' active' : ''), o[1]);
-          b.type = 'button';
-          b.dataset.year = o[0] ? 'current' : 'all';
-          b.setAttribute('aria-pressed', o[0] === yearOnly ? 'true' : 'false');
-          yearBar.appendChild(b);
-        });
+      function addButton(bar, label, value, on, count) {
+        var b = el('button', 'notes-filter-btn' + (on ? ' active' : ''));
+        b.type = 'button';
+        b.dataset.value = value;
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        b.append(label);
+        if (count != null) {
+          b.append(' ');
+          b.appendChild(el('span', 'notes-count', count));
+        }
+        bar.appendChild(b);
+      }
+
+      function countBy(pool, key) {
+        var counts = {};
+        pool.forEach(function (e) { counts[e[key]] = (counts[e[key]] || 0) + 1; });
+        return counts;
       }
 
       function renderFilters() {
-        var pool = entries.filter(inYear);
-        var counts = { All: pool.length };
-        pool.forEach(function (e) { counts[e.category] = (counts[e.category] || 0) + 1; });
+        var catPool = entries.filter(function (e) { return inYear(e) && inSource(e); });
+        var counts = countBy(catPool, 'category');
         if (current !== 'All' && !counts[current]) current = 'All';
         filterBar.replaceChildren();
-        ['All'].concat(CATEGORIES).forEach(function (c) {
-          if (c !== 'All' && !counts[c]) return;
-          var b = el('button', 'notes-filter-btn' + (c === current ? ' active' : ''));
-          b.type = 'button';
-          b.dataset.category = c;
-          b.setAttribute('aria-pressed', c === current ? 'true' : 'false');
-          b.append((c === 'All' ? 'All categories' : c) + ' ');
-          b.appendChild(el('span', 'notes-count', counts[c]));
-          filterBar.appendChild(b);
+        addButton(filterBar, 'All categories', 'All', current === 'All', catPool.length);
+        CATEGORIES.forEach(function (c) {
+          if (counts[c]) addButton(filterBar, c, c, c === current, counts[c]);
         });
+
+        var srcPool = entries.filter(function (e) { return inYear(e) && inCat(e); });
+        var sCounts = countBy(srcPool, 'type');
+        if (currentSource !== 'All' && !sCounts[currentSource]) currentSource = 'All';
+        sourceBar.replaceChildren();
+        addButton(sourceBar, 'All sources', 'All', currentSource === 'All', srcPool.length);
+        SOURCES.forEach(function (c) {
+          if (sCounts[c]) addButton(sourceBar, c, c, c === currentSource, sCounts[c]);
+        });
+
+        yearBar.replaceChildren();
+        addButton(yearBar, 'All years', 'all', !yearOnly);
+        addButton(yearBar, 'This year (' + thisYear + ')', 'current', yearOnly);
       }
 
       function applyFilter() {
         var shown = 0;
         list.querySelectorAll('.note-card').forEach(function (c) {
           var ok = (current === 'All' || c.dataset.category === current) &&
+            (currentSource === 'All' || c.dataset.source === currentSource) &&
             (!yearOnly || Number(c.dataset.year) === thisYear);
           c.hidden = !ok;
           if (ok) shown++;
         });
         emptyMsg.hidden = shown > 0;
-        filterBar.querySelectorAll('.notes-filter-btn').forEach(function (b) {
-          var on = b.dataset.category === current;
-          b.classList.toggle('active', on);
-          b.setAttribute('aria-pressed', on ? 'true' : 'false');
-        });
       }
 
       function render() {
         entries.sort(function (a, b) { return b.date - a.date; });
         list.replaceChildren.apply(list, entries.map(card));
         renderFilters();
-        renderYearFilter();
         applyFilter();
       }
 
-      filterBar.addEventListener('click', function (ev) {
-        var b = ev.target.closest('.notes-filter-btn');
-        if (!b) return;
-        current = b.dataset.category;
-        applyFilter();
-      });
-
-      yearBar.addEventListener('click', function (ev) {
-        var b = ev.target.closest('.notes-filter-btn');
-        if (!b) return;
-        yearOnly = b.dataset.year === 'current';
-        renderFilters();
-        renderYearFilter();
-        applyFilter();
-      });
+      function onClick(bar, set) {
+        bar.addEventListener('click', function (ev) {
+          var b = ev.target.closest('.notes-filter-btn');
+          if (!b) return;
+          set(b.dataset.value);
+          renderFilters();
+          applyFilter();
+        });
+      }
+      onClick(filterBar, function (v) { current = v; });
+      onClick(sourceBar, function (v) { currentSource = v; });
+      onClick(yearBar, function (v) { yearOnly = v === 'current'; });
 
       render();
 
