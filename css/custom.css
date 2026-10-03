@@ -581,6 +581,11 @@ a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
   white-space: nowrap;
   margin-left: auto;
 }
+.note-date-mobile { display: none; flex-basis: 100%; }
+@media (max-width: 576px) {
+  .note-date { display: none; }
+  .note-date-mobile { display: block; }
+}
 .note-excerpt { font-size: .95rem; margin-bottom: 1rem; }
 .note-read {
   display: inline-flex;
@@ -608,3 +613,14 @@ a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
 [data-bs-theme="light"] .callout-cta { background: #fdf4c9; }
 
 .nav-link .nav-icon { margin-right: .25rem; font-size: .85em; }
+
+/* Mobile menu: larger touch targets */
+@media (max-width: 767.98px) {
+  .navbar-collapse .nav-link {
+    font-size: 1.35rem;
+    padding: .9rem .5rem;
+  }
+  .navbar-collapse .navbar-nav { padding: .5rem 0 .75rem; }
+  .nav-link .nav-icon { margin-right: .6rem; }
+  .navbar-collapse .nav-item:has(.theme-toggle) { justify-content: flex-end; margin: .25rem .5rem 0 0 !important; }
+}

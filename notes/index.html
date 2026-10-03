@@ -197,10 +197,12 @@
         var meta = el('div', 'note-meta');
         meta.appendChild(el('span', 'type-pill ' + e.type[0], e.type[1]));
         meta.appendChild(el('span', 'note-cat', e.category));
+        var when = e.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        meta.appendChild(el('span', 'note-date-mobile', when));
 
         var head = el('div', 'note-head');
         head.appendChild(el('h3', 'note-title', e.title));
-        head.appendChild(el('span', 'note-date', e.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })));
+        head.appendChild(el('span', 'note-date', when));
         var p = el('p', 'note-excerpt text-secondary', limit(e.excerpt));
 
         var a = el('a', 'note-read');
