@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HH1TN65YEW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HH1TN65YEW');
+</script>
+  <meta charset="UTF-8">
+  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-bs-theme','light')}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ignacio Alonso · Notes</title>
+  <meta name="description" content="Articles, talks, videos and other public work by Ignacio Alonso Delgado, filterable by topic.">
+  <link rel="canonical" href="https://ialonso.es/notes/">
+
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/custom.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="https://ialonso.es/img/nyc.png" alt="Ignacio Alonso" class="navbar-avatar">
+        <span>Ignacio Alonso</span>
+      </a>
+      <span class="navbar-subtitle d-none d-sm-inline">IT Enterprise Architect · Associate Professor</span>
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="/bio">Bio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/experiments">Experiments</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/notes">Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://medium.com/@nachoad" target="_blank" rel="noopener">Medium</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://twitter.com/nachoad" target="_blank" rel="noopener">X</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li class="nav-item d-flex align-items-center ms-1">
+            <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+              <i class="fa-solid fa-sun icon-sun"></i><i class="fa-regular fa-moon icon-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="container mt-5 pt-4 pb-5">
+    <div class="col-lg-10 col-md-11 mx-auto">
+
+      <div class="mb-4" id="pageHeader">
+        <h1 class="fw-bold mb-1">Notes</h1>
+        <p class="subtitle mb-0">Articles, talks, videos and other public stuff</p>
+      </div>
+
+      <!-- Category filter -->
+      <div class="notes-filter" id="notesFilter" role="group" aria-label="Filter by category"></div>
+
+      <!-- Entries -->
+      <div id="notesList"></div>
+      <p class="text-secondary" id="notesEmpty" hidden>Nothing here yet.</p>
+
+    </div>
+  </main>
+
+  <script src="/js/navbar-scroll.js"></script>
+  <script src="/js/theme.js" defer></script>
+
+  <script>
+    (function () {
+      var CATEGORIES = [
+        'Cloud & Architecture',
+        'AI & Agents',
+        'NLP & Text Analytics',
+        'Data Science & Big Data',
+        'Careers & Roles',
+        'Social Media'
+      ];
+
+      var EXCERPT_WORDS = 40;
+
+      // type: [css class, label]
+      var T = {
+        googleNext: ['type-talk', 'Talk at Google Next'],
+        seminar:    ['type-talk', 'Talk at a Seminar'],
+        meetup:     ['type-talk', 'Talk at a Meetup'],
+        talk:       ['type-talk', 'Talk'],
+        playlist:   ['type-youtube', 'Youtube video playlist'],
+        video:      ['type-video', 'Video'],
+        opinion:    ['type-opinion', 'Expert opinion'],
+        ibm:        ['type-article', 'IBM Blog article'],
+        medium:     ['type-article', 'Medium article']
+      };
+
+      var ENTRIES = [
+        { title: 'Google Next · From Chaos to Control: The MasOrange story of streamlining to Google Cloud',
+          url: 'https://cloud.withgoogle.com/next/25/speakers?session=CT1-30', date: '2025-04-09', type: T.googleNext, category: 'Cloud & Architecture',
+          excerpt: 'Session at Google Cloud Next 2025 about the MasOrange story of streamlining its landscape to Google Cloud.' },
+        { title: 'Seminario | Cómo ayuda la nube en la digitalización de tu empresa',
+          url: 'https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-como-ayuda-la-nube-digitalizacion-empresas/', date: '2023-11-27', type: T.seminar, category: 'Cloud & Architecture',
+          excerpt: 'En el marco de la Oficina Acelera Pyme, el próximo lunes 27 de noviembre, en este webinar en horario de tarde, se explicará cómo las empresas…' },
+        { title: 'Seminario | La nube como acelerador digital de la empresa',
+          url: 'https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-la-nube-como-acelerador-digital-de-las-empresas/', date: '2022-02-10', type: T.seminar, category: 'Cloud & Architecture',
+          excerpt: 'En el marco de la Oficina Acelera Pyme, el próximo jueves 10 de febrero, en un webinar gratuito se explicará cómo las empresas están usando la nube como ventaja para la verdadera transformación digital.' },
+        { title: 'Natural Language Processing (NLP) for Dummies',
+          url: 'https://www.youtube.com/watch?v=gY5YW8w_K8I', date: '2018-06-26', type: T.meetup, category: 'NLP & Text Analytics',
+          excerpt: 'Charla de Natural Language Processing (NLP) para Dummies en el meetup Big Data Developers in Madrid, 26 de junio de 2018.' },
+        { title: 'Watson Explorer Community Edition Tutorial',
+          url: 'https://www.youtube.com/watch?v=5omSvmhRwV0&list=PLGexnaYV5MSKhxrKluc2c4-XOVl_qNwhW', date: '2018-03-01', type: T.playlist, category: 'NLP & Text Analytics',
+          excerpt: 'Breve tutorial de Watson Explorer Community Edition. El presente tutorial no es oficial.' },
+        { title: 'Data Science Experience + Watson Machine Learning',
+          url: 'https://www.youtube.com/watch?v=3JCt-NgqYi8&t=1s', date: '2017-12-01', type: T.video, category: 'Data Science & Big Data',
+          excerpt: 'El vídeo muestra una demostración práctica de una exploración de datos con Data Science Experiece (DSX), la creación de modelos y el despliegue de estos en Watson Machine Learning (WML) y la puesta en producción con una web de ejemplo.' },
+        { title: 'El País: El \'big data\' ayuda a tomar decisiones, pero lo importante es la intuición',
+          url: 'https://retina.elpais.com/retina/2017/05/30/tendencias/1496154380_977310.html', date: '2017-05-30', type: T.opinion, category: 'Data Science & Big Data',
+          excerpt: 'El auge de las llamadas data-driven companies, o empresas dirigidas por datos, es una realidad creciente derivada de la explosión del big data en el entramado empresarial de la sociedad de la información. Pero los datos no dan por sí mismos respuestas irrefutables…' },
+        { title: 'Silicon: A fondo: ¿Acabará la inteligencia artificial con el data scientist?',
+          url: 'http://www.silicon.es/a-fondo-acabara-inteligencia-artificial-data-scientist-2340008', date: '2017-05-01', type: T.opinion, category: 'Careers & Roles',
+          excerpt: 'En la era del Big Data, el trabajo de data scientist ha cobrado gran relevancia. La automatización y el desarrollo de la inteligencia artificial podría ser una amenaza, pero también una oportunidad.' },
+        { title: '¿Qué es un científico de datos?',
+          url: 'https://www.youtube.com/watch?v=PpNb1sHF2hA', date: '2017-03-01', type: T.video, category: 'Careers & Roles',
+          excerpt: 'Vídeo sobre qué es un científico de datos, una de las profesiones nacidas con el big data y la analítica.' },
+        { title: 'Data Science Experience (DSX) + Spark SQL Intro',
+          url: 'https://www.youtube.com/watch?v=6UcO8HpKduc', date: '2016-12-01', type: T.video, category: 'Data Science & Big Data',
+          excerpt: 'Introducción en vídeo a IBM Data Science Experience (DSX) y a Spark SQL.' },
+        { title: 'IBM Business Connect 2016 - Data Science Experience',
+          url: 'https://www.youtube.com/watch?v=VasEE2cw2Bg', date: '2016-11-01', type: T.talk, category: 'Data Science & Big Data',
+          excerpt: 'Mini-charla de Data Science Experience (DSx) en el IBM Business Connect 2016.' },
+        { title: 'Las Redes Sociales: ¿estás dentro o no?',
+          url: 'https://www.ibm.com/blogs/think/es-es/2014/11/04/las-redes-sociales-estas-dentro-o-no/', date: '2014-11-04', type: T.ibm, category: 'Social Media',
+          excerpt: 'Recuerdo perfectamente aquel día de mayo del 2007. Era primera hora por la mañana, y un amigo de la Facultad se acercó a mi con la cara llena de ilusión y me dijo, «¡Mira esta web! Se llama Twitter…' }
+      ];
+
+      var MEDIUM_FEED_API = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nachoad';
+
+      // Medium categories are inferred from the title
+      function categorize(title) {
+        var t = title.toLowerCase();
+        if (/engineer|\brol\b|carrera|career|data scientist|científico de datos/.test(t)) return 'Careers & Roles';
+        if (/cloud|nube|aws|gcp|oci|kubernetes|arquitect|infraestructura/.test(t)) return 'Cloud & Architecture';
+        if (/nlp|lenguaje natural|texto/.test(t)) return 'NLP & Text Analytics';
+        if (/big data|datos|data science|analytics/.test(t)) return 'Data Science & Big Data';
+        if (/redes sociales|social media/.test(t)) return 'Social Media';
+        return 'AI & Agents';
+      }
+
+      function excerptFrom(html) {
+        var doc = new DOMParser().parseFromString(html || '', 'text/html');
+        doc.querySelectorAll('h1,h2,h3,figure,img,script,style').forEach(function (n) { n.remove(); });
+        var words = (doc.body.textContent || '').trim().split(/\s+/).filter(Boolean);
+        return words.slice(0, EXCERPT_WORDS).join(' ') + (words.length > EXCERPT_WORDS ? '…' : '');
+      }
+
+      function limit(text) {
+        var words = text.split(/\s+/);
+        if (words.length <= EXCERPT_WORDS) return text;
+        return words.slice(0, EXCERPT_WORDS).join(' ') + '…';
+      }
+
+      function parseDate(s) { return new Date(s.replace(' ', 'T') + 'Z'); }
+
+      var list = document.getElementById('notesList');
+      var filterBar = document.getElementById('notesFilter');
+      var emptyMsg = document.getElementById('notesEmpty');
+      var entries = ENTRIES.map(function (e) { e.date = new Date(e.date + 'T00:00:00'); return e; });
+      var current = 'All';
+
+      function el(tag, cls, text) {
+        var n = document.createElement(tag);
+        if (cls) n.className = cls;
+        if (text != null) n.textContent = text;
+        return n;
+      }
+
+      function card(e) {
+        var art = el('article', 'note-card');
+        art.dataset.category = e.category;
+
+        var meta = el('div', 'note-meta');
+        meta.appendChild(el('span', 'type-pill ' + e.type[0], e.type[1]));
+        meta.appendChild(el('span', 'note-date', e.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })));
+        meta.appendChild(el('span', 'note-cat', e.category));
+
+        var h = el('h3', 'note-title', e.title);
+        var p = el('p', 'note-excerpt text-secondary', limit(e.excerpt));
+
+        var a = el('a', 'btn-ia');
+        a.href = e.url; a.target = '_blank'; a.rel = 'noopener';
+        a.appendChild(el('i', 'fa-solid fa-arrow-up-right-from-square'));
+        a.append(' Source');
+        a.setAttribute('aria-label', 'Open original source: ' + e.title);
+
+        art.append(meta, h, p, a);
+        return art;
+      }
+
+      function renderFilters() {
+        var counts = { All: entries.length };
+        entries.forEach(function (e) { counts[e.category] = (counts[e.category] || 0) + 1; });
+        filterBar.replaceChildren();
+        ['All'].concat(CATEGORIES).forEach(function (c) {
+          if (c !== 'All' && !counts[c]) return;
+          var b = el('button', 'notes-filter-btn' + (c === current ? ' active' : ''));
+          b.type = 'button';
+          b.dataset.category = c;
+          b.setAttribute('aria-pressed', c === current ? 'true' : 'false');
+          b.append(c + ' ');
+          b.appendChild(el('span', 'notes-count', counts[c]));
+          filterBar.appendChild(b);
+        });
+      }
+
+      function applyFilter() {
+        var shown = 0;
+        list.querySelectorAll('.note-card').forEach(function (c) {
+          var ok = current === 'All' || c.dataset.category === current;
+          c.hidden = !ok;
+          if (ok) shown++;
+        });
+        emptyMsg.hidden = shown > 0;
+        filterBar.querySelectorAll('.notes-filter-btn').forEach(function (b) {
+          var on = b.dataset.category === current;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+      }
+
+      function render() {
+        entries.sort(function (a, b) { return b.date - a.date; });
+        list.replaceChildren.apply(list, entries.map(card));
+        renderFilters();
+        applyFilter();
+      }
+
+      filterBar.addEventListener('click', function (ev) {
+        var b = ev.target.closest('.notes-filter-btn');
+        if (!b) return;
+        current = b.dataset.category;
+        applyFilter();
+      });
+
+      render();
+
+      fetch(MEDIUM_FEED_API)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || data.status !== 'ok' || !Array.isArray(data.items)) return;
+          data.items.forEach(function (item) {
+            entries.push({
+              title: item.title,
+              url: item.link,
+              date: parseDate(item.pubDate),
+              type: T.medium,
+              category: categorize(item.title),
+              excerpt: excerptFrom(item.content || item.description)
+            });
+          });
+          render();
+        })
+        .catch(function () { /* Medium feed unavailable: keep the static entries */ });
+    })();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
