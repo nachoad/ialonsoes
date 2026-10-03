@@ -276,7 +276,37 @@
         yearBar.replaceChildren();
         addButton(yearBar, 'All years', 'all', !yearOnly);
         addButton(yearBar, 'This year (' + thisYear + ')', 'current', yearOnly);
+        fitBars();
       }
+
+      // Desktop: each bar fits on one line; if it would wrap, a +/- button toggles the extra lines
+      var mobileMq = window.matchMedia('(max-width: 576px)');
+      function fitBar(bar) {
+        var old = bar.querySelector('.notes-more');
+        if (old) old.remove();
+        bar.classList.remove('has-more');
+        bar.style.maxHeight = '';
+        var first = bar.querySelector('.notes-filter-btn');
+        if (mobileMq.matches || !first) return;
+        bar.classList.add('has-more');
+        var btns = bar.querySelectorAll('.notes-filter-btn');
+        var wraps = btns[btns.length - 1].offsetTop > first.offsetTop;
+        if (!wraps) { bar.classList.remove('has-more'); return; }
+        var expanded = bar.dataset.expanded === '1';
+        var more = el('button', 'notes-more', expanded ? '\u2212' : '+');
+        more.type = 'button';
+        more.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        more.setAttribute('aria-label', expanded ? 'Show fewer options' : 'Show more options');
+        more.addEventListener('click', function () {
+          bar.dataset.expanded = bar.dataset.expanded === '1' ? '0' : '1';
+          fitBar(bar);
+        });
+        bar.appendChild(more);
+        if (!expanded) bar.style.maxHeight = first.offsetHeight + 'px';
+      }
+      function fitBars() { [filterBar, yearBar, sourceBar].forEach(fitBar); }
+      window.addEventListener('resize', fitBars);
+      window.addEventListener('load', fitBars);
 
       function applyFilter() {
         var shown = 0;

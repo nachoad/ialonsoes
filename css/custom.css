@@ -540,6 +540,23 @@ a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
 [data-bs-theme="light"] #yearFilter   { --f-fg: #1d4ed8; }
 [data-bs-theme="light"] #sourceFilter { --f-fg: #15803d; }
 .notes-filter-year, .notes-filter-source { margin-top: -.9rem; }
+.notes-filter { position: relative; }
+.notes-filter.has-more { padding-right: 2.8rem; overflow: hidden; }
+.notes-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111;
+  background: var(--f-solid);
+  border: 1px solid var(--f-solid);
+  border-radius: 20px;
+  padding: .3rem .85rem;
+  cursor: pointer;
+}
 .notes-count { opacity: .6; margin-left: .15rem; }
 .note-card {
   background: rgba(var(--ink-rgb), .05);
@@ -627,4 +644,5 @@ a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
   }
   .notes-filter::-webkit-scrollbar { display: none; }
   .notes-filter-btn { flex: 0 0 auto; white-space: nowrap; }
+  .notes-more { display: none; }
 }
