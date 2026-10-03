@@ -107,9 +107,9 @@
 
       // source labels
       var T = {
-        googleNext: 'Talk at Google Next',
-        seminar:    'Talk at a Seminar',
-        meetup:     'Talk at a Meetup',
+        googleNext: 'Talk',
+        seminar:    'Talk',
+        meetup:     'Talk',
         talk:       'Talk',
         playlist:   'Youtube video playlist',
         video:      'Video',
@@ -117,7 +117,8 @@
         ibm:        'IBM Blog article',
         medium:     'Medium article'
       };
-      var SOURCES = Object.keys(T).map(function (k) { return T[k]; });
+      var SOURCES = Object.keys(T).map(function (k) { return T[k]; })
+        .filter(function (v, i, a) { return a.indexOf(v) === i; });
 
       var ENTRIES = [
         { title: 'Google Next · From Chaos to Control: The MasOrange story of streamlining to Google Cloud',

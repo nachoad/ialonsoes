@@ -616,3 +616,15 @@ a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
   .nav-link .nav-icon { margin-right: .6rem; }
   .navbar-collapse .nav-item:has(.theme-toggle) { justify-content: flex-end; margin: .25rem .5rem 0 0 !important; }
 }
+
+/* Mobile: filter bars stay on one line and scroll horizontally */
+@media (max-width: 576px) {
+  .notes-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .notes-filter::-webkit-scrollbar { display: none; }
+  .notes-filter-btn { flex: 0 0 auto; white-space: nowrap; }
+}
