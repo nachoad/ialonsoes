@@ -197,13 +197,13 @@
         var h = el('h3', 'note-title', e.title);
         var p = el('p', 'note-excerpt text-secondary', limit(e.excerpt));
 
-        var a = el('a', 'btn-ia');
+        var a = el('a', 'note-read');
         a.href = e.url; a.target = '_blank'; a.rel = 'noopener';
-        a.appendChild(el('i', 'fa-solid fa-arrow-up-right-from-square'));
-        a.append(' Source');
-        a.setAttribute('aria-label', 'Open original source: ' + e.title);
+        a.append('Leerlo ');
+        a.appendChild(el('i', 'fa-solid fa-arrow-right'));
+        a.setAttribute('aria-label', 'Leerlo: ' + e.title);
 
-        art.append(meta, h, p, a);
+        art.append(h, meta, p, a);
         return art;
       }
 
