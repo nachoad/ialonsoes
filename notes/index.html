@@ -41,12 +41,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto gap-1">
-          <li class="nav-item"><a class="nav-link" href="/bio">Bio</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/notes">Notes</a></li>
-          <li class="nav-item"><a class="nav-link" href="/experiments">Experiments</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://medium.com/@nachoad" target="_blank" rel="noopener">Medium</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://twitter.com/nachoad" target="_blank" rel="noopener">X</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li class="nav-item"><a class="nav-link" href="/bio"><i class="fa fa-male fa-fw nav-icon"></i> Bio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/notes"><i class="fa-solid fa-pen fa-fw nav-icon"></i> Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="/experiments"><i class="fas fa-flask fa-fw nav-icon"></i> Experiments</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://medium.com/@nachoad" target="_blank" rel="noopener"><i class="fab fa-medium-m fa-fw nav-icon"></i> Medium</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://twitter.com/nachoad" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter fa-fw nav-icon"></i> X</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in fa-fw nav-icon"></i> LinkedIn</a></li>
           <li class="nav-item d-flex align-items-center ms-1">
             <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">
               <i class="fa-solid fa-sun icon-sun"></i><i class="fa-regular fa-moon icon-moon"></i>
@@ -87,7 +87,6 @@
       var CATEGORIES = [
         'Cloud & Architecture',
         'AI & Agents',
-        'NLP & Text Analytics',
         'Data Science & Big Data',
         'Careers & Roles',
         'Social Media'
@@ -119,10 +118,10 @@
           url: 'https://www.camaramurcia.es/cursos/oficina-acelera-pyme-seminario-la-nube-como-acelerador-digital-de-las-empresas/', date: '2022-02-10', type: T.seminar, category: 'Cloud & Architecture',
           excerpt: 'En el marco de la Oficina Acelera Pyme, el próximo jueves 10 de febrero, en un webinar gratuito se explicará cómo las empresas están usando la nube como ventaja para la verdadera transformación digital.' },
         { title: 'Natural Language Processing (NLP) for Dummies',
-          url: 'https://www.youtube.com/watch?v=gY5YW8w_K8I', date: '2018-06-26', type: T.meetup, category: 'NLP & Text Analytics',
+          url: 'https://www.youtube.com/watch?v=gY5YW8w_K8I', date: '2018-06-26', type: T.meetup, category: 'Data Science & Big Data',
           excerpt: 'Charla de Natural Language Processing (NLP) para Dummies en el meetup Big Data Developers in Madrid, 26 de junio de 2018.' },
         { title: 'Watson Explorer Community Edition Tutorial',
-          url: 'https://www.youtube.com/watch?v=5omSvmhRwV0&list=PLGexnaYV5MSKhxrKluc2c4-XOVl_qNwhW', date: '2018-03-01', type: T.playlist, category: 'NLP & Text Analytics',
+          url: 'https://www.youtube.com/watch?v=5omSvmhRwV0&list=PLGexnaYV5MSKhxrKluc2c4-XOVl_qNwhW', date: '2018-03-01', type: T.playlist, category: 'Data Science & Big Data',
           excerpt: 'Breve tutorial de Watson Explorer Community Edition. El presente tutorial no es oficial.' },
         { title: 'Data Science Experience + Watson Machine Learning',
           url: 'https://www.youtube.com/watch?v=3JCt-NgqYi8&t=1s', date: '2017-12-01', type: T.video, category: 'Data Science & Big Data',
@@ -154,8 +153,7 @@
         var t = title.toLowerCase();
         if (/engineer|\brol\b|carrera|career|data scientist|científico de datos/.test(t)) return 'Careers & Roles';
         if (/cloud|nube|aws|gcp|oci|kubernetes|arquitect|infraestructura/.test(t)) return 'Cloud & Architecture';
-        if (/nlp|lenguaje natural|texto/.test(t)) return 'NLP & Text Analytics';
-        if (/big data|datos|data science|analytics/.test(t)) return 'Data Science & Big Data';
+        if (/big data|datos|data science|analytics|nlp|lenguaje natural|texto/.test(t)) return 'Data Science & Big Data';
         if (/redes sociales|social media/.test(t)) return 'Social Media';
         return 'AI & Agents';
       }

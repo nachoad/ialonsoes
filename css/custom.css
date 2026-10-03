@@ -606,3 +606,5 @@ a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
   padding: 1rem 1.25rem;
 }
 [data-bs-theme="light"] .callout-cta { background: #fdf4c9; }
+
+.nav-link .nav-icon { margin-right: .25rem; font-size: .85em; }
