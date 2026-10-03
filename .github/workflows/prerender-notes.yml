@@ -1,0 +1,26 @@
+name: Refresh prerendered notes
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # daily, picks up new Medium articles
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prerender:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/prerender-notes.py
+      - name: Commit if the notes changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -am "Refresh prerendered notes"
+            git push
+          fi

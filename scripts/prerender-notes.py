@@ -6,15 +6,17 @@ search and AI crawlers don't execute. This renders the page in headless Chrome a
 writes the result between the prerender markers, so the content is in the raw HTML.
 The page's own JS replaces it at load, so the visible behaviour doesn't change.
 
-Run it after adding entries or publishing on Medium:  python3 scripts/prerender-notes.py
+It runs daily from .github/workflows/prerender-notes.yml; to run it by hand:
+  python3 scripts/prerender-notes.py
 """
-import html, json, re, subprocess, sys, time
+import html, json, os, re, shutil, subprocess, sys, time
 from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / 'notes' / 'index.html'
-CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+CHROME = (os.environ.get('CHROME') or shutil.which('google-chrome') or shutil.which('chromium')
+          or '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
 PORT = 8766
 
 
@@ -50,7 +52,7 @@ def main():
                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     time.sleep(1)
     try:
-        dom = subprocess.run([CHROME, '--headless', '--disable-gpu', '--virtual-time-budget=8000', '--dump-dom',
+        dom = subprocess.run([CHROME, '--headless', '--disable-gpu', '--no-sandbox', '--virtual-time-budget=8000', '--dump-dom',
                               f'http://localhost:{PORT}/notes/'], capture_output=True, text=True, check=True).stdout
     finally:
         server.terminate()
