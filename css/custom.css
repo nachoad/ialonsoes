@@ -388,12 +388,6 @@ section[id] { scroll-margin-top: 90px; }
   text-decoration-color: rgba(var(--ink-rgb), .6);
 }
 
-/* Bio page: inline links match secondary text */
-.bio-main .link-ia { color: var(--fg-secondary); }
-.bio-main .link-ia:hover { color: var(--fg-strong); }
-.bio-main .callout-note .link-ia { color: var(--accent-text); }
-.bio-main .callout-note .link-ia:hover { color: var(--fg-strong); }
-
 /* Articles table */
 .bio-table {
   background-color: var(--bg);

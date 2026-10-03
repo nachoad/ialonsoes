@@ -42,8 +42,8 @@
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="/bio">Bio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/experiments">Experiments</a></li>
           <li class="nav-item"><a class="nav-link active" href="/notes">Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="/experiments">Experiments</a></li>
           <li class="nav-item"><a class="nav-link" href="https://medium.com/@nachoad" target="_blank" rel="noopener">Medium</a></li>
           <li class="nav-item"><a class="nav-link" href="https://twitter.com/nachoad" target="_blank" rel="noopener">X</a></li>
           <li class="nav-item"><a class="nav-link" href="https://linkedin.com/in/ignacioalonsodelgado/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -240,7 +240,7 @@
           b.type = 'button';
           b.dataset.category = c;
           b.setAttribute('aria-pressed', c === current ? 'true' : 'false');
-          b.append(c + ' ');
+          b.append((c === 'All' ? 'All categories' : c) + ' ');
           b.appendChild(el('span', 'notes-count', counts[c]));
           filterBar.appendChild(b);
         });
