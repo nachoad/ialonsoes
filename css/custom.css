@@ -388,6 +388,12 @@ section[id] { scroll-margin-top: 90px; }
   text-decoration-color: rgba(var(--ink-rgb), .6);
 }
 
+/* Bio page: inline links match secondary text */
+.bio-main .link-ia { color: var(--fg-secondary); }
+.bio-main .link-ia:hover { color: var(--fg-strong); }
+.bio-main .callout-note .link-ia { color: var(--accent-text); }
+.bio-main .callout-note .link-ia:hover { color: var(--fg-strong); }
+
 /* Articles table */
 .bio-table {
   background-color: var(--bg);
@@ -545,6 +551,7 @@ section[id] { scroll-margin-top: 90px; }
   background: var(--yellow);
   border-color: var(--yellow);
 }
+.notes-filter-year { margin-top: -.9rem; }
 .notes-count { opacity: .6; margin-left: .15rem; }
 .note-card {
   background: rgba(var(--ink-rgb), .05);
@@ -571,7 +578,7 @@ section[id] { scroll-margin-top: 90px; }
   gap: .25rem 1rem;
   margin-bottom: .6rem;
 }
-.note-title { font-size: 1.2rem; font-weight: 700; margin: 0; flex: 1 1 18rem; }
+.note-title { font-size: 1.5rem; font-weight: 700; margin: 0; flex: 1 1 18rem; }
 .note-date {
   font-size: .78rem;
   color: rgba(var(--ink-rgb), .55);
@@ -595,3 +602,11 @@ section[id] { scroll-margin-top: 90px; }
 .note-read i { font-size: .7rem; transition: transform .2s; }
 .note-read:hover { border-bottom-color: currentColor; }
 .note-read:hover i { transform: translateX(4px); }
+
+/* Closing call-to-action on the bio page */
+.callout-cta {
+  background: #2b2410;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+[data-bs-theme="light"] .callout-cta { background: #fdf4c9; }

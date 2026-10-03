@@ -69,6 +69,9 @@
       <!-- Category filter -->
       <div class="notes-filter" id="notesFilter" role="group" aria-label="Filter by category"></div>
 
+      <!-- Year filter -->
+      <div class="notes-filter notes-filter-year" id="yearFilter" role="group" aria-label="Filter by year"></div>
+
       <!-- Entries -->
       <div id="notesList"></div>
       <p class="text-secondary" id="notesEmpty" hidden>Nothing here yet.</p>
@@ -177,6 +180,9 @@
       var emptyMsg = document.getElementById('notesEmpty');
       var entries = ENTRIES.map(function (e) { e.date = new Date(e.date + 'T00:00:00'); return e; });
       var current = 'All';
+      var thisYear = new Date().getFullYear();
+      var yearOnly = false;
+      var yearBar = document.getElementById('yearFilter');
 
       function el(tag, cls, text) {
         var n = document.createElement(tag);
@@ -188,6 +194,7 @@
       function card(e) {
         var art = el('article', 'note-card');
         art.dataset.category = e.category;
+        art.dataset.year = e.date.getFullYear();
 
         var meta = el('div', 'note-meta');
         meta.appendChild(el('span', 'type-pill ' + e.type[0], e.type[1]));
@@ -208,9 +215,24 @@
         return art;
       }
 
+      function inYear(e) { return !yearOnly || e.date.getFullYear() === thisYear; }
+
+      function renderYearFilter() {
+        yearBar.replaceChildren();
+        [[false, 'All years'], [true, 'This year (' + thisYear + ')']].forEach(function (o) {
+          var b = el('button', 'notes-filter-btn' + (o[0] === yearOnly ? ' active' : ''), o[1]);
+          b.type = 'button';
+          b.dataset.year = o[0] ? 'current' : 'all';
+          b.setAttribute('aria-pressed', o[0] === yearOnly ? 'true' : 'false');
+          yearBar.appendChild(b);
+        });
+      }
+
       function renderFilters() {
-        var counts = { All: entries.length };
-        entries.forEach(function (e) { counts[e.category] = (counts[e.category] || 0) + 1; });
+        var pool = entries.filter(inYear);
+        var counts = { All: pool.length };
+        pool.forEach(function (e) { counts[e.category] = (counts[e.category] || 0) + 1; });
+        if (current !== 'All' && !counts[current]) current = 'All';
         filterBar.replaceChildren();
         ['All'].concat(CATEGORIES).forEach(function (c) {
           if (c !== 'All' && !counts[c]) return;
@@ -227,7 +249,8 @@
       function applyFilter() {
         var shown = 0;
         list.querySelectorAll('.note-card').forEach(function (c) {
-          var ok = current === 'All' || c.dataset.category === current;
+          var ok = (current === 'All' || c.dataset.category === current) &&
+            (!yearOnly || Number(c.dataset.year) === thisYear);
           c.hidden = !ok;
           if (ok) shown++;
         });
@@ -243,6 +266,7 @@
         entries.sort(function (a, b) { return b.date - a.date; });
         list.replaceChildren.apply(list, entries.map(card));
         renderFilters();
+        renderYearFilter();
         applyFilter();
       }
 
@@ -250,6 +274,15 @@
         var b = ev.target.closest('.notes-filter-btn');
         if (!b) return;
         current = b.dataset.category;
+        applyFilter();
+      });
+
+      yearBar.addEventListener('click', function (ev) {
+        var b = ev.target.closest('.notes-filter-btn');
+        if (!b) return;
+        yearOnly = b.dataset.year === 'current';
+        renderFilters();
+        renderYearFilter();
         applyFilter();
       });
 
