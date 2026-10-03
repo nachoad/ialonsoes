@@ -514,6 +514,8 @@ section[id] { scroll-margin-top: 90px; }
 .exp-card-v2:hover .exp-card-link i { transform: translateX(4px); }
 
 /* Inline highlight for the current-project sentence */
+a.hl-project { text-decoration: none; }
+a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hl-project {
   background-color: #3a3a3a;
   color: #fff;
