@@ -1,0 +1,15 @@
+# Ignacio Alonso Delgado
+
+> Chief Enterprise Architect at Kyndryl and Associate Professor. Writes and speaks about cloud and enterprise architecture, AI agents and open-weight LLMs on-premises (NeoCloud), data science and big data, NLP, careers and roles in data, and social media. Articles are in Spanish and English.
+
+## Main pages
+- [Notes](https://ialonso.es/notes/): articles, talks, videos and expert opinions, filterable by topic and source
+- [Bio](https://ialonso.es/bio/): career, key projects, skills and teaching
+- [Experiments](https://ialonso.es/experiments/): public experiments and projects
+- [Home](https://ialonso.es/): short introduction and current challenges
+
+## Elsewhere
+- [Medium](https://medium.com/@nachoad): articles on cloud, AI agents, data and careers
+- [LinkedIn](https://linkedin.com/in/ignacioalonsodelgado/)
+- [X](https://twitter.com/nachoad)
+- [YouTube](https://www.youtube.com/channel/UC59Y86nFk7eg-5Ql4Xi3peQ)
