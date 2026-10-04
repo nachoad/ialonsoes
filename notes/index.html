@@ -400,7 +400,11 @@
         meta.appendChild(el('span', 'note-date-mobile', when));
 
         var head = el('div', 'note-head');
-        head.appendChild(el('h3', 'note-title', e.title));
+        var h = el('h3', 'note-title');
+        var t = el('a', null, e.title);
+        t.href = e.url; t.target = '_blank'; t.rel = 'noopener';
+        h.appendChild(t);
+        head.appendChild(h);
         head.appendChild(el('span', 'note-date', when));
         var p = el('p', 'note-excerpt text-secondary', limit(e.excerpt));
 

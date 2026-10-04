@@ -584,6 +584,8 @@ a.hl-project:hover { text-decoration: underline; text-underline-offset: 3px; }
   margin-bottom: .6rem;
 }
 .note-title { font-size: 1.5rem; font-weight: 700; margin: 0; flex: 1 1 18rem; }
+.note-title a { color: inherit; text-decoration: none; }
+.note-title a:hover { text-decoration: underline; }
 .note-date {
   font-size: .78rem;
   color: rgba(var(--ink-rgb), .55);
