@@ -268,6 +268,71 @@
   <script src="/js/navbar-scroll.js"></script>
   <script src="/js/theme.js" defer></script>
 
+  <!-- prerender:medium -->
+  <script type="application/json" id="mediumData">[
+  {
+    "title": "Human Systems Architect: el plano que nadie dibujaba",
+    "url": "https://medium.com/@nachoad/human-systems-architect-el-plano-que-nadie-dibujaba-7bf425dcd2ea",
+    "date": "2026-10-11",
+    "excerpt": "En el trabajo (Kyndryl) llevamos unos meses viendo cómo deben evolucionar los equipos y roles alrededor de la IA. En una de esas conversaciones alguien empezó a nombrar unas siglas como un nuevo rol necesario: HSA. Ya me conocéis, mis…"
+  },
+  {
+    "title": "Fotocopias de fotocopias: qué pasa cuando Internet deja de ser humano",
+    "url": "https://medium.com/@nachoad/fotocopias-de-fotocopias-qu%C3%A9-pasa-cuando-internet-deja-de-ser-humano-244311baa4dc",
+    "date": "2026-10-04",
+    "excerpt": "Estos días ando buscando cámara de fotos nueva. Y he hecho lo de siempre: antes de gastarme el dinero, irme a los foros a leer qué dice la gente que ya la tiene. Hace unos años, esto era una fiesta.…"
+  },
+  {
+    "title": "MCP: el enchufe universal de la IA",
+    "url": "https://medium.com/@nachoad/mcp-el-enchufe-universal-de-la-ia-ec27b675fcc1",
+    "date": "2026-08-02",
+    "excerpt": "Durante años, cuando alguien me preguntaba cómo se conectan las aplicaciones entre sí, yo siempre respondía lo mismo: “a través de APIs”. Y era una respuesta correcta. Lo sigue siendo. Pero desde hace unos meses, en muchas conversaciones técnicas aparece…"
+  },
+  {
+    "title": "Ya no eliges nube, eliges un mapa: bienvenidos a Cloud 3.0",
+    "url": "https://medium.com/@nachoad/ya-no-eliges-nube-eliges-un-mapa-bienvenidos-a-cloud-3-0-fc9c63200389",
+    "date": "2026-07-12",
+    "excerpt": "El sábado pasado estaba con un amigo tomando una Coca-Cola en uno de esos parques de bolas para niños que, para quien no tenga peques pequeños en casa, os cuento un secreto: es de los pocos sitios donde uno puede…"
+  },
+  {
+    "title": "Forward Deployed Engineer: el rol que ha puesto de moda la IA",
+    "url": "https://medium.com/@nachoad/forward-deployed-engineer-el-rol-que-ha-puesto-de-moda-la-ia-63a043761530",
+    "date": "2026-06-07",
+    "excerpt": "De los espías de Palantir a la IA El viernes pasado estaba hablando con un compañero de Estados Unidos sobre algo que me ronda la cabeza desde hace tiempo: qué puestos de trabajo van a sobrevivir, cuáles van a desaparecer…"
+  },
+  {
+    "title": "El fin de las apps tal como las conocemos",
+    "url": "https://medium.com/@nachoad/el-fin-de-las-apps-tal-como-las-conocemos-38c0098dd2e9",
+    "date": "2026-05-24",
+    "excerpt": "Cuando la IA se convierte en la única interfaz que necesitas. El otro día estaba intentando reservar un restaurante para ir a comer con mi mujer. Abrí la app del restaurante… que pedía registrarse. Probé otra app de reservas… actualización…"
+  },
+  {
+    "title": "La IA ha llegado a las aulas: reflexiones de un padre tecnólogo",
+    "url": "https://medium.com/@nachoad/la-ia-ha-llegado-a-las-aulas-reflexiones-de-un-padre-tecnologo-af2d1641275d",
+    "date": "2026-01-07",
+    "excerpt": "Como padre de niños en edad escolar y tecnólogo de profesión, vivo en una constante encrucijada. Por un lado, trabajo cada día con inteligencia artificial, veo su potencial transformador y entiendo que es una herramienta que definirá el futuro profesional…"
+  },
+  {
+    "title": "Humanos contra IA",
+    "url": "https://medium.com/@nachoad/humanos-contra-ia-bf213e1a2641",
+    "date": "2025-05-03",
+    "excerpt": "El apagón del lunes pasado en España me dejó algo (poco) de tiempo de reflexión, fuera del imparable mundo actual de Internet, TV o radio. La cabeza me llevó a pensar en el futuro de nuestro mundo. La invención de…"
+  },
+  {
+    "title": "Google Cloud Next 2025: TPUs, WAN y Agentes de IA.",
+    "url": "https://medium.com/@nachoad/google-cloud-next-2025-tpus-wan-y-agentes-de-ia-2f3bef68c4d8",
+    "date": "2025-04-13",
+    "excerpt": "Notas personales de mi asistencia al Google Cloud Next 2025 en Las Vegas. Donde además de disfrutar del evento y el ambiente, tuve la oportunidad de dar esta charla de la mano de Kyndryl, junto con MasOrange. Hace apenas unas…"
+  },
+  {
+    "title": "Máquinas virtuales sobre plataformas de contenedores",
+    "url": "https://medium.com/@nachoad/m%C3%A1quinas-virtuales-sobre-plataformas-de-contenedores-5a6e07eec8e9",
+    "date": "2025-03-24",
+    "excerpt": "Ventajas, desventas y soluciones. La combinación de máquinas virtuales (VMs) y plataformas de contenedores, como Kubernetes, representa una tendencia creciente en la infraestructura de TI moderna. Esta estrategia híbrida busca aprovechar los beneficios de ambas tecnologías: el fuerte aislamiento de…"
+  }
+]</script>
+  <!-- /prerender:medium -->
+
   <script>
     (function () {
       // category: css class
@@ -342,8 +407,6 @@
           excerpt: 'Recuerdo perfectamente aquel día de mayo del 2007. Era primera hora por la mañana, y un amigo de la Facultad se acercó a mi con la cara llena de ilusión y me dijo, «¡Mira esta web! Se llama Twitter…' }
       ];
 
-      var MEDIUM_FEED_API = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nachoad';
-
       // Medium categories are inferred from the title
       function categorize(title) {
         var t = title.toLowerCase();
@@ -354,25 +417,23 @@
         return 'AI & Agents';
       }
 
-      function excerptFrom(html) {
-        var doc = new DOMParser().parseFromString(html || '', 'text/html');
-        doc.querySelectorAll('h1,h2,h3,figure,img,script,style').forEach(function (n) { n.remove(); });
-        var words = (doc.body.textContent || '').trim().split(/\s+/).filter(Boolean);
-        return words.slice(0, EXCERPT_WORDS).join(' ') + (words.length > EXCERPT_WORDS ? '…' : '');
-      }
-
       function limit(text) {
         var words = text.split(/\s+/);
         if (words.length <= EXCERPT_WORDS) return text;
         return words.slice(0, EXCERPT_WORDS).join(' ') + '…';
       }
 
-      function parseDate(s) { return new Date(s.replace(' ', 'T') + 'Z'); }
-
       var list = document.getElementById('notesList');
       var filterBar = document.getElementById('notesFilter');
       var emptyMsg = document.getElementById('notesEmpty');
       var entries = ENTRIES.map(function (e) { e.date = new Date(e.date + 'T00:00:00'); return e; });
+      // Medium articles are baked into the page daily by scripts/prerender-notes.py
+      try {
+        JSON.parse(document.getElementById('mediumData').textContent).forEach(function (m) {
+          entries.push({ title: m.title, url: m.url, date: new Date(m.date + 'T00:00:00'), type: T.medium,
+                         category: categorize(m.title), excerpt: m.excerpt });
+        });
+      } catch (err) { /* no Medium data: static entries only */ }
       var current = 'All';
       var currentSource = 'All';
       var sourceBar = document.getElementById('sourceFilter');
@@ -528,24 +589,6 @@
       onClick(yearBar, function (v) { yearOnly = v === 'current'; });
 
       render();
-
-      fetch(MEDIUM_FEED_API)
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (!data || data.status !== 'ok' || !Array.isArray(data.items)) return;
-          data.items.forEach(function (item) {
-            entries.push({
-              title: item.title,
-              url: item.link,
-              date: parseDate(item.pubDate),
-              type: T.medium,
-              category: categorize(item.title),
-              excerpt: excerptFrom(item.content || item.description)
-            });
-          });
-          render();
-        })
-        .catch(function () { /* Medium feed unavailable: keep the static entries */ });
     })();
   </script>
 
