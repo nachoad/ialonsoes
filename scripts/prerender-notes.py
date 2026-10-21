@@ -10,6 +10,8 @@ It runs daily from .github/workflows/prerender-notes.yml; to run it by hand:
   python3 scripts/prerender-notes.py
 """
 import html, json, os, re, shutil, subprocess, sys, time, urllib.request
+import xml.etree.ElementTree as ET
+from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -18,7 +20,8 @@ PAGE = ROOT / 'notes' / 'index.html'
 CHROME = (os.environ.get('CHROME') or shutil.which('google-chrome') or shutil.which('chromium')
           or '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
 PORT = 8766
-FEED = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nachoad'
+FEED = 'https://medium.com/feed/@nachoad'
+CONTENT = '{http://purl.org/rss/1.0/modules/content/}encoded'
 EXCERPT_WORDS = 40  # keep in sync with notes/index.html
 
 
@@ -52,6 +55,7 @@ class Cards(HTMLParser):
 class Text(HTMLParser):
     """Plain text of an article's HTML, skipping headings, figures, images, scripts and styles."""
     SKIP = {'h1', 'h2', 'h3', 'figure', 'script', 'style'}
+    BLOCK = {'p', 'li', 'blockquote', 'pre', 'br', 'h4', 'h5', 'h6'}  # the feed has no whitespace between these
 
     def __init__(self):
         super().__init__()
@@ -59,9 +63,11 @@ class Text(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         if tag in self.SKIP: self.depth += 1
+        if tag in self.BLOCK: self.parts.append(' ')
 
     def handle_endtag(self, tag):
         if tag in self.SKIP and self.depth: self.depth -= 1
+        if tag in self.BLOCK: self.parts.append(' ')
 
     def handle_data(self, data):
         if not self.depth: self.parts.append(data)
@@ -76,11 +82,12 @@ def excerpt(content):
 def medium_items():
     """Medium articles as the page's minimal JSON, fetched here so visitors don't wait on a third-party API."""
     req = urllib.request.Request(FEED, headers={'User-Agent': 'ialonso.es prerender'})
-    data = json.load(urllib.request.urlopen(req, timeout=30))
-    if data.get('status') != 'ok' or not data.get('items'):
+    items = ET.parse(urllib.request.urlopen(req, timeout=30)).findall('channel/item')
+    if not items:
         sys.exit('Medium feed returned no items. Not writing.')
-    return [{'title': i['title'], 'url': i['link'].split('?source=')[0], 'date': i['pubDate'][:10],
-             'excerpt': excerpt(i.get('content') or i.get('description'))} for i in data['items']]
+    return [{'title': i.findtext('title'), 'url': i.findtext('link').split('?source=')[0],
+             'date': parsedate_to_datetime(i.findtext('pubDate')).strftime('%Y-%m-%d'),
+             'excerpt': excerpt(i.findtext(CONTENT) or i.findtext('description'))} for i in items]
 
 
 def main():
