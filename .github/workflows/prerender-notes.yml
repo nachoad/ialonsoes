@@ -12,7 +12,7 @@ jobs:
   prerender:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: python3 scripts/prerender-notes.py
       - name: Commit if the notes changed
         run: |
